@@ -1,0 +1,14 @@
+<%- model_class = Employment -%>
+<%= bootstrap_error(@employment, model_class ) %>
+
+<%= simple_form_for @employment, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.association :user, :collection => User.in_company(current_company.id) %>
+
+  <%= f.association :company %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                employments_path, :class => 'btn' %>
+  </div>
+<% end %>

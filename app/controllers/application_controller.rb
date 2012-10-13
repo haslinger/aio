@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-#   check_authorization :unless => :devise_controller?
+  check_authorization :unless => :devise_controller?
 
   protect_from_forgery
 
@@ -8,11 +8,11 @@ class ApplicationController < ActionController::Base
 #  end
 
   # HAS: 20120416: Ausnahmen werden in den einzelnen Controllern spezifiziert
-#  before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
-#  before_filter :set_locale
-#  before_filter :set_menu
-#  before_filter :set_company
+  before_filter :set_locale
+  before_filter :set_menu
+  before_filter :set_company
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -42,14 +42,14 @@ class ApplicationController < ActionController::Base
 
 private
 
-#  helper_method :current_company
-#  def current_company
-#    Company.find_by_id(session[:company])
-#  end
+  helper_method :current_company
+  def current_company
+    Company.find_by_id(session[:company])
+  end
 
 # Hands over current_company to Ability model
-#  def current_ability
-#    @current_ability ||= Ability.new(current_user, current_company)
-#  end
+  def current_ability
+    @current_ability ||= Ability.new(current_user, current_company)
+  end
 
 end

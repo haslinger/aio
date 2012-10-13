@@ -16,33 +16,6 @@
     <dd><%= @user.parent.name %></dd>
   <% end %>
 
-  <dt><strong><%= model_class.human_attribute_name(:deputy) %>:</strong></dt>
-  <dd>
-    <% for deputy in @user.deputies.all %>
-      <span class="label"><%= deputy.name %></span>
-    <% end %> &nbsp;
-  </dd>
-  <dt><strong><%= model_class.human_attribute_name(:functions) %>:</strong></dt>
-  <dd>
-    <% for function in @user.functions.all %>
-      <span class="label label-info"><a href="#" rel="tooltip" data-placement="top" data-original-title="<%= function.description %>"><%= function.name%></a></span>
-    <% end %> &nbsp;
-  </dd>
-
-  <dt><strong><%= model_class.human_attribute_name(:roles_in_company) %>:</strong></dt>
-  <dd>
-    <% for role_in_company in @user.roles_in_company.all %>
-      <span class="label label-warning"><%= role_in_company.name %></span>
-    <% end %> &nbsp;
-  </dd>
-
-  <dt><strong><%= model_class.human_attribute_name(:departments) %>:</strong></dt>
-  <dd>
-    <% for department in @user.departments %>
-      <span class="label label-success"><%= department.name + " (" + department.company.name + " )"%></span>
-    <% end %> &nbsp;
-  </dd>
-
   <dt><strong><%= model_class.human_attribute_name(:user_roles) %>:</strong></dt>
   <dd>
     <% for role in @user.roles.all %>
