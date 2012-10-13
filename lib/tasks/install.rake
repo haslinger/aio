@@ -5,6 +5,9 @@ namespace :aio do
     @admin = Role.new
     @admin.name = "admin"
     @admin.save
+    @company_admin = Role.new
+    @company_admin.name = "company_admin"
+    @company_admin.save
 
     @user = User.new
     @user.email = "admin@admin.com"

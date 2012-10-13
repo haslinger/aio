@@ -1,0 +1,18 @@
+<ul class="nav nav-list">
+  <li class="nav-header">Administration</li>
+  <li <%= active("companies") %>><%= link_to icon_("home") + t("activerecord.models.company.other"), companies_path %></li>
+  <li <%= active("users") %>><%= link_to icon_("user") + t("activerecord.models.user.other"), admin_users_path %></li>
+  <li <%= active("employments") %>>
+    <%= link_to(icons(["user", "resize-horizontal", "home"]) + t("activerecord.models.employment.other"), employments_path) if admin? %>
+  </li>
+  <li <%= active("roles") %>><%= link_to(icon_("cogs") + t("activerecord.models.role.other"), roles_path) if admin? %></li>
+  <li <%= active("assignments") %>>
+    <%= link_to(icons(["user", "resize-horizontal", "cogs"]) + t("activerecord.models.assignment.other"), assignments_path) if admin? %>
+  </li>
+
+  <li <%= active("currencies") %>><%= link_to icon_("money") + t("activerecord.models.currency.other"), currencies_path %></li>
+  <li <%= active("customers") %>><%= link_to icon_("user") + t("activerecord.models.customer.other"), customers_path %></li>
+  <li <%= active("paymentterms") %>><%= link_to icons(["money", "calendar"]) + t("activerecord.models.paymentterm.other"), paymentterms_path %></li>
+  <li <%= active("products") %>><%= link_to icon_("gift") + t("activerecord.models.product.other"), products_path %></li>
+  <li <%= active("units") %>><%= link_to icon_("beaker") + t("activerecord.models.unit.other"), units_path %></li>
+</ul>
