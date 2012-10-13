@@ -1,4 +1,6 @@
 Aio::Application.routes.draw do
+  resources :business_processes
+
   resources :invoice_positions
 
   resources :invoice_headers

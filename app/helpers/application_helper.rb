@@ -100,14 +100,14 @@ module ApplicationHelper
     output = ""
     output << username(object.created_by) if object.created_by
     output << " " if object.created_by
-    output << l( object.created_at, :format => :timestamp )
+    output << " (" + l( object.created_at, :format => :timestamp ) + ")"
   end
 
   def updated(object)
     output = ""
     output << username(object.updated_by) if object.updated_by
     output << " " if object.updated_by
-    output << l( object.updated_at , :format => :timestamp )
+    output << " (" + l( object.updated_at , :format => :timestamp ) + ")"
   end
 
   def header(version)

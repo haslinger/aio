@@ -12,4 +12,7 @@ class Company < ActiveRecord::Base
   has_many :customers, :dependent => :restrict
   has_many :products, :dependent => :restrict
   
+
+  has_many :business_processes, :dependent => :restrict
+
 end
