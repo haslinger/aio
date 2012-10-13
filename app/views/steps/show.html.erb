@@ -16,7 +16,16 @@
   <dd><%= @step.step_model.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:step_action_id) %>:</strong></dt>
   <dd><%= @step.step_action.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
+  <dd><%= @step.versions.last.index %></dd>
 </dl>
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#versions" data-toggle="tab"><%= model_class.human_attribute_name(:versions) %></a></li>
+  </ul>
+  <div class="tab-content">
+    <%= versioning_helper(@step, :active) %>
+  </div>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

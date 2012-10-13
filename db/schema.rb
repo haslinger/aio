@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013162217) do
+ActiveRecord::Schema.define(:version => 20121013183354) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -138,6 +138,14 @@ ActiveRecord::Schema.define(:version => 20121013162217) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "process_instances", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "created_by"
+    t.integer  "business_process_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
   create_table "products", :force => true do |t|
     t.string   "productkey"
     t.string   "shorttext"
@@ -183,6 +191,25 @@ ActiveRecord::Schema.define(:version => 20121013162217) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "business_process_id"
+  end
+
+  create_table "token_statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "tokens", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "process_instance_id"
+    t.integer  "step_id"
+    t.integer  "created_by"
+    t.integer  "updated_by"
+    t.integer  "token_status_id"
+    t.integer  "last_step_id"
+    t.integer  "object_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "units", :force => true do |t|

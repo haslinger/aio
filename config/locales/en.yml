@@ -284,6 +284,9 @@ en:
       predecessor:
         one: Predecessor
         other: Predecessors
+      process_instance:
+        one: Process Instance
+        other: Process Instances
       product:
         one: Product
         other: Products
@@ -308,6 +311,12 @@ en:
       successor:
         one: Successor
         other: Successors
+      token:
+        one: Token
+        other: Tokens
+      token_status:
+        one: Token Status
+        other: Token Statuses
       unit:
         one: Unit
         other: Units

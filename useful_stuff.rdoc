@@ -22,14 +22,21 @@ add index manually:
   add_index :users, :ancestry
   rails generate migration add_object_changes_to_versions object_changes:text
 
-////////////////////////////
   rails generate scaffold BusinessProcess company_id:integer created_by:integer name:string description:text
   rails generate scaffold Step name:string company_id:integer created_by:integer process_id:integer step_model_id:string step_action_id:string
   rails generate scaffold StepModel name:string
   rails generate scaffold StepAction name:string step_model_id:integer
   rails generate scaffold OutgoingArrow step_id:integer successor_id:integer
   rails generate migration add_company_id_to_outgoing_arrows company_id:integer
-  rails generate migration change_process_id_in_steps
+  rails generate migration change_business_process_id_in_steps
+  rails generate scaffold ProcessInstance company_id:integer created_by:integer business_process_id:integer
+  rails generate scaffold Token company_id:integer process_instance_id:integer step_id:integer created_by:integer updated_by:integer token_status_id:integer last_step_id:integer object_id:integer
+  rails generate scaffold TokenStatus name:string
+
+////////////////////////////
+
+
+
 ///////////////////////////
 
 === Pluralization

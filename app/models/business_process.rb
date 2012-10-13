@@ -7,5 +7,6 @@ class BusinessProcess < ActiveRecord::Base
 
   validates_presence_of :company_id
   belongs_to :company
-  has_many :steps
+  has_many :steps, :dependent => :restrict
+  has_many :process_instances, :dependent => :restrict
 end

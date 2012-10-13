@@ -1,4 +1,10 @@
 Aio::Application.routes.draw do
+  resources :token_statuses
+
+  resources :tokens
+
+  resources :process_instances
+
   resources :outgoing_arrows
 
   resources :step_actions
