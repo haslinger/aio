@@ -1,69 +1,82 @@
-<h1>Listing customers</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Academictitle</th>
-    <th>Lastname</th>
-    <th>Firstname</th>
-    <th>Street</th>
-    <th>Zipcode</th>
-    <th>City</th>
-    <th>Country</th>
-    <th>Phone</th>
-    <th>Fax</th>
-    <th>Mobil</th>
-    <th>Email</th>
-    <th>Taxnumber</th>
-    <th>Paymentterms</th>
-    <th>Customergroup</th>
-    <th>Taxcode</th>
-    <th>Salesman</th>
-    <th>Comment</th>
-    <th>Deletionflag</th>
-    <th>Contactperson</th>
-    <th>Discount</th>
-    <th>Consignee</th>
-    <th>Currency</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @customers.each do |customer| %>
-  <tr>
-    <td><%= customer.title %></td>
-    <td><%= customer.academictitle %></td>
-    <td><%= customer.lastname %></td>
-    <td><%= customer.firstname %></td>
-    <td><%= customer.street %></td>
-    <td><%= customer.zipcode %></td>
-    <td><%= customer.city %></td>
-    <td><%= customer.country %></td>
-    <td><%= customer.phone %></td>
-    <td><%= customer.fax %></td>
-    <td><%= customer.mobil %></td>
-    <td><%= customer.email %></td>
-    <td><%= customer.taxnumber %></td>
-    <td><%= customer.paymentterms %></td>
-    <td><%= customer.customergroup %></td>
-    <td><%= customer.taxcode %></td>
-    <td><%= customer.salesman %></td>
-    <td><%= customer.comment %></td>
-    <td><%= customer.deletionflag %></td>
-    <td><%= customer.contactperson %></td>
-    <td><%= customer.discount %></td>
-    <td><%= customer.consignee %></td>
-    <td><%= customer.currency %></td>
-    <td><%= customer.user %></td>
-    <td><%= link_to 'Show', customer %></td>
-    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:academictitle) %></th>
+      <th><%= model_class.human_attribute_name(:lastname) %></th>
+      <th><%= model_class.human_attribute_name(:firstname) %></th>
+      <th><%= model_class.human_attribute_name(:street) %></th>
+      <th><%= model_class.human_attribute_name(:zipcode) %></th>
+      <th><%= model_class.human_attribute_name(:city) %></th>
+      <th><%= model_class.human_attribute_name(:country) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:fax) %></th>
+      <th><%= model_class.human_attribute_name(:mobil) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:taxnumber) %></th>
+      <th><%= model_class.human_attribute_name(:paymentterms) %></th>
+      <th><%= model_class.human_attribute_name(:customergroup) %></th>
+      <th><%= model_class.human_attribute_name(:taxcode) %></th>
+      <th><%= model_class.human_attribute_name(:salesman) %></th>
+      <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:deletionflag) %></th>
+      <th><%= model_class.human_attribute_name(:contactperson) %></th>
+      <th><%= model_class.human_attribute_name(:discount) %></th>
+      <th><%= model_class.human_attribute_name(:consignee) %></th>
+      <th><%= model_class.human_attribute_name(:currency) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= link_to customer.id, customer_path(customer) %></td>
+        <td><%= customer.title %></td>
+        <td><%= customer.academictitle %></td>
+        <td><%= customer.lastname %></td>
+        <td><%= customer.firstname %></td>
+        <td><%= customer.street %></td>
+        <td><%= customer.zipcode %></td>
+        <td><%= customer.city %></td>
+        <td><%= customer.country %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.fax %></td>
+        <td><%= customer.mobil %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.taxnumber %></td>
+        <td><%= customer.paymentterms %></td>
+        <td><%= customer.customergroup %></td>
+        <td><%= customer.taxcode %></td>
+        <td><%= customer.salesman %></td>
+        <td><%= customer.comment %></td>
+        <td><%= customer.deletionflag %></td>
+        <td><%= customer.contactperson %></td>
+        <td><%= customer.discount %></td>
+        <td><%= customer.consignee %></td>
+        <td><%= customer.currency %></td>
+        <td><%= customer.user_id %></td>
+        <td><%=l customer.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_customer_path(customer), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      customer_path(customer),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Customer', new_customer_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_customer_path,
+            :class => 'btn btn-primary' %>

@@ -1,60 +1,41 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Productkey:</b>
-  <%= @product.productkey %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:productkey) %>:</strong></dt>
+  <dd><%= @product.productkey %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:shorttext) %>:</strong></dt>
+  <dd><%= @product.shorttext %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:productgroup) %>:</strong></dt>
+  <dd><%= @product.productgroup %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:eannumber) %>:</strong></dt>
+  <dd><%= @product.eannumber %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxcode) %>:</strong></dt>
+  <dd><%= @product.taxcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deletionflag) %>:</strong></dt>
+  <dd><%= @product.deletionflag %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:baseunit) %>:</strong></dt>
+  <dd><%= @product.baseunit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salesprice) %>:</strong></dt>
+  <dd><%= @product.salesprice %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:purchaseprice) %>:</strong></dt>
+  <dd><%= @product.purchaseprice %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= @product.created_by %></dd>
+</dl>
 
-<p>
-  <b>Shorttext:</b>
-  <%= @product.shorttext %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Productgroup:</b>
-  <%= @product.productgroup %>
-</p>
-
-<p>
-  <b>Eannumber:</b>
-  <%= @product.eannumber %>
-</p>
-
-<p>
-  <b>Taxcode:</b>
-  <%= @product.taxcode %>
-</p>
-
-<p>
-  <b>Deletionflag:</b>
-  <%= @product.deletionflag %>
-</p>
-
-<p>
-  <b>Baseunit:</b>
-  <%= @product.baseunit %>
-</p>
-
-<p>
-  <b>Salesprice:</b>
-  <%= @product.salesprice %>
-</p>
-
-<p>
-  <b>Purchaseprice:</b>
-  <%= @product.purchaseprice %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @product.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

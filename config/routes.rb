@@ -1,10 +1,10 @@
 Aio::Application.routes.draw do
-  resources :roles
   devise_for :users
 
   namespace :admin do
     resources :users # Have the admin manage them here.
   end
+  resources :roles
   resources :assignments
 
   resources :companies
@@ -12,6 +12,10 @@ Aio::Application.routes.draw do
 
   resources :products
   resources :customers
+
+  resources :paymentterms
+  resources :currencies
+  resources :units
 
   root :to => 'admin/users#index'
 end

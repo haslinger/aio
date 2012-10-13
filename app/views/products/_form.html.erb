@@ -1,21 +1,18 @@
-<%= simple_form_for(@product) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :productkey %>
-    <%= f.input :shorttext %>
-    <%= f.input :description %>
-    <%= f.input :productgroup %>
-    <%= f.input :eannumber %>
-    <%= f.input :taxcode %>
-    <%= f.input :deletionflag %>
-    <%= f.input :baseunit %>
-    <%= f.input :salesprice %>
-    <%= f.input :purchaseprice %>
-    <%= f.input :user_id %>
-  </div>
-
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :productkey %>
+  <%= f.input :shorttext %>
+  <%= f.input :description %>
+  <%= f.input :productgroup %>
+  <%= f.input :eannumber %>
+  <%= f.input :taxcode %>
+  <%= f.input :deletionflag %>
+  <%= f.input :baseunit %>
+  <%= f.input :salesprice %>
+  <%= f.input :purchaseprice %>
+  <%= f.input :created_by %>
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
   </div>
 <% end %>

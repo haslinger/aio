@@ -1,43 +1,39 @@
-<h1>Listing products</h1>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:productkey) %></th>
+      <th><%= model_class.human_attribute_name(:shorttext) %></th>
+      <th><%= model_class.human_attribute_name(:productgroup) %></th>
+      <th><%= model_class.human_attribute_name(:baseunit) %></th>
 
-<table>
-  <tr>
-    <th>Productkey</th>
-    <th>Shorttext</th>
-    <th>Description</th>
-    <th>Productgroup</th>
-    <th>Eannumber</th>
-    <th>Taxcode</th>
-    <th>Deletionflag</th>
-    <th>Baseunit</th>
-    <th>Salesprice</th>
-    <th>Purchaseprice</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.productkey %></td>
-    <td><%= product.shorttext %></td>
-    <td><%= product.description %></td>
-    <td><%= product.productgroup %></td>
-    <td><%= product.eannumber %></td>
-    <td><%= product.taxcode %></td>
-    <td><%= product.deletionflag %></td>
-    <td><%= product.baseunit %></td>
-    <td><%= product.salesprice %></td>
-    <td><%= product.purchaseprice %></td>
-    <td><%= product.user_id %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.productkey %></td>
+        <td><%= product.shorttext %></td>
+        <td><%= product.productgroup %></td>
+        <td><%= product.baseunit %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_product_path(product), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      product_path(product),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_product_path,
+            :class => 'btn btn-primary' %>
