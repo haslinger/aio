@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121013162217) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20121013142014) do
+=======
+ActiveRecord::Schema.define(:version => 20121013134912) do
+>>>>>>> 7d92e435a51743a56fbfb21ee55977d47c9f11c6
+>>>>>>> b3174640f55832a0577499b359ba097f3b75313c
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -57,7 +65,6 @@ ActiveRecord::Schema.define(:version => 20121013162217) do
     t.string   "mobil"
     t.string   "email"
     t.string   "taxnumber"
-    t.string   "paymentterms"
     t.string   "customergroup"
     t.string   "taxcode"
     t.string   "salesman"
@@ -66,11 +73,12 @@ ActiveRecord::Schema.define(:version => 20121013162217) do
     t.string   "contactperson"
     t.string   "discount"
     t.text     "consignee"
-    t.string   "currency"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.integer  "created_by"
     t.integer  "company_id"
+    t.integer  "currency_id"
+    t.integer  "paymentterm_id"
   end
 
   create_table "employments", :force => true do |t|

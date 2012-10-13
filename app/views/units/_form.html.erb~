@@ -1,10 +1,5 @@
 <%= simple_form_for @unit, :html => { :class => 'form-horizontal' } do |f| %>
-  <% if @unit.company_id %>
-    <%= f.association :company, :disabled => true %>
-  <% else %>
-    <%= f.association :company, :disabled => true, :selected => current_company.id %>
-    <%= f.hidden_field :company_id, :value => current_company.id %>
-  <% end %>
+  <%= f.input :company_id %>
   <%= f.input :unit %>
   <%= f.input :shorttext %>
   <%= f.input :isocode %>

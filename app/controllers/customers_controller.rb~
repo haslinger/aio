@@ -11,7 +11,7 @@ load_and_authorize_resource
 
   def update
     if @customer.update_attributes(params[:customer])
-      redirect_to @customer, notice: 'Customer was successfully updated.'
+      redirect_to @assignment, notice: 'Customer was successfully updated.'
     else
       render action: "edit"
     end
