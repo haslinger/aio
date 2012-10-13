@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013102406) do
+ActiveRecord::Schema.define(:version => 20121013120831) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -69,6 +69,43 @@ ActiveRecord::Schema.define(:version => 20121013102406) do
     t.integer  "company_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "invoice_headers", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "customer_id"
+    t.string   "reference_number"
+    t.integer  "currency_id"
+    t.integer  "created_by"
+    t.text     "consignee"
+    t.integer  "dicount"
+    t.integer  "discountvalue_header",   :default => 0, :null => false
+    t.integer  "discountvalue_position", :default => 0, :null => false
+    t.integer  "taxvalue_full",          :default => 0, :null => false
+    t.integer  "taxvalue_half",          :default => 0, :null => false
+    t.integer  "valuevalue_netto_full",  :default => 0, :null => false
+    t.integer  "value_netto_half",       :default => 0, :null => false
+    t.integer  "value_netto",            :default => 0, :null => false
+    t.integer  "value_payed",            :default => 0, :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+  end
+
+  create_table "invoice_positions", :force => true do |t|
+    t.integer  "invoice_header_id"
+    t.boolean  "textposition"
+    t.integer  "product_id"
+    t.integer  "quantity",          :default => 0, :null => false
+    t.integer  "unit_id"
+    t.integer  "discount",          :default => 0, :null => false
+    t.integer  "value",             :default => 0, :null => false
+    t.integer  "vatrate"
+    t.integer  "price",             :default => 0, :null => false
+    t.integer  "base_price",        :default => 0, :null => false
+    t.text     "description"
+    t.integer  "created_by"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "paymentterms", :force => true do |t|

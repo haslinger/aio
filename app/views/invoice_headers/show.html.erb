@@ -1,0 +1,80 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @invoice_header.company_id %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @invoice_header.customer_id %>
+</p>
+
+<p>
+  <b>Reference number:</b>
+  <%= @invoice_header.reference_number %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @invoice_header.currency_id %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @invoice_header.created_by %>
+</p>
+
+<p>
+  <b>Consignee:</b>
+  <%= @invoice_header.consignee %>
+</p>
+
+<p>
+  <b>Dicount:</b>
+  <%= @invoice_header.dicount %>
+</p>
+
+<p>
+  <b>Discountvalue header:</b>
+  <%= @invoice_header.discountvalue_header %>
+</p>
+
+<p>
+  <b>Discountvalue position:</b>
+  <%= @invoice_header.discountvalue_position %>
+</p>
+
+<p>
+  <b>Taxvalue full:</b>
+  <%= @invoice_header.taxvalue_full %>
+</p>
+
+<p>
+  <b>Taxvalue half:</b>
+  <%= @invoice_header.taxvalue_half %>
+</p>
+
+<p>
+  <b>Valuevalue netto full:</b>
+  <%= @invoice_header.valuevalue_netto_full %>
+</p>
+
+<p>
+  <b>Value netto half:</b>
+  <%= @invoice_header.value_netto_half %>
+</p>
+
+<p>
+  <b>Value netto:</b>
+  <%= @invoice_header.value_netto %>
+</p>
+
+<p>
+  <b>Value payed:</b>
+  <%= @invoice_header.value_payed %>
+</p>
+
+
+<%= link_to 'Edit', edit_invoice_header_path(@invoice_header) %> |
+<%= link_to 'Back', invoice_headers_path %>

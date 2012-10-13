@@ -1,0 +1,2 @@
+module InvoicePositionsHelper
+end

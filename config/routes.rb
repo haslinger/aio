@@ -1,4 +1,8 @@
 Aio::Application.routes.draw do
+  resources :invoice_positions
+
+  resources :invoice_headers
+
   devise_for :users
 
   namespace :admin do

@@ -1,0 +1,51 @@
+<h1>Listing invoice_headers</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Customer</th>
+    <th>Reference number</th>
+    <th>Currency</th>
+    <th>Created by</th>
+    <th>Consignee</th>
+    <th>Dicount</th>
+    <th>Discountvalue header</th>
+    <th>Discountvalue position</th>
+    <th>Taxvalue full</th>
+    <th>Taxvalue half</th>
+    <th>Valuevalue netto full</th>
+    <th>Value netto half</th>
+    <th>Value netto</th>
+    <th>Value payed</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @invoice_headers.each do |invoice_header| %>
+  <tr>
+    <td><%= invoice_header.company_id %></td>
+    <td><%= invoice_header.customer_id %></td>
+    <td><%= invoice_header.reference_number %></td>
+    <td><%= invoice_header.currency_id %></td>
+    <td><%= invoice_header.created_by %></td>
+    <td><%= invoice_header.consignee %></td>
+    <td><%= invoice_header.dicount %></td>
+    <td><%= invoice_header.discountvalue_header %></td>
+    <td><%= invoice_header.discountvalue_position %></td>
+    <td><%= invoice_header.taxvalue_full %></td>
+    <td><%= invoice_header.taxvalue_half %></td>
+    <td><%= invoice_header.valuevalue_netto_full %></td>
+    <td><%= invoice_header.value_netto_half %></td>
+    <td><%= invoice_header.value_netto %></td>
+    <td><%= invoice_header.value_payed %></td>
+    <td><%= link_to 'Show', invoice_header %></td>
+    <td><%= link_to 'Edit', edit_invoice_header_path(invoice_header) %></td>
+    <td><%= link_to 'Destroy', invoice_header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Invoice header', new_invoice_header_path %>

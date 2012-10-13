@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  customer_id: 1
+  reference_number: MyString
+  currency_id: 1
+  created_by: 1
+  consignee: MyText
+  dicount: 1
+  discountvalue_header: 1
+  discountvalue_position: 1
+  taxvalue_full: 1
+  taxvalue_half: 1
+  valuevalue_netto_full: 1
+  value_netto_half: 1
+  value_netto: 1
+  value_payed: 1
+
+two:
+  company_id: 1
+  customer_id: 1
+  reference_number: MyString
+  currency_id: 1
+  created_by: 1
+  consignee: MyText
+  dicount: 1
+  discountvalue_header: 1
+  discountvalue_position: 1
+  taxvalue_full: 1
+  taxvalue_half: 1
+  valuevalue_netto_full: 1
+  value_netto_half: 1
+  value_netto: 1
+  value_payed: 1

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Textposition:</b>
+  <%= @invoice_position.textposition %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%= @invoice_position.product_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @invoice_position.quantity %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%= @invoice_position.unit_id %>
+</p>
+
+<p>
+  <b>Discount:</b>
+  <%= @invoice_position.discount %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @invoice_position.value %>
+</p>
+
+<p>
+  <b>Vatrate:</b>
+  <%= @invoice_position.vatrate %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @invoice_position.price %>
+</p>
+
+<p>
+  <b>Base price:</b>
+  <%= @invoice_position.base_price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @invoice_position.description %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @invoice_position.created_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_invoice_position_path(@invoice_position) %> |
+<%= link_to 'Back', invoice_positions_path %>

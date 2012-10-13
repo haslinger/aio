@@ -1,0 +1,1 @@
+rails generate scaffold invoice_position textposition:boolean product_id:integer quantity:integer unit_id:integer discount:integer value:integer vatrate:integer price:integer base_price:integer description:text created_by:integer  

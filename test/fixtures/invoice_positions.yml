@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  textposition: false
+  product_id: 1
+  quantity: 1
+  unit_id: 1
+  discount: 1
+  value: 1
+  vatrate: 1
+  price: 1
+  base_price: 1
+  description: MyText
+  created_by: 1
+
+two:
+  textposition: false
+  product_id: 1
+  quantity: 1
+  unit_id: 1
+  discount: 1
+  value: 1
+  vatrate: 1
+  price: 1
+  base_price: 1
+  description: MyText
+  created_by: 1

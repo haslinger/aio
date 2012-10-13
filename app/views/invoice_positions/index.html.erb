@@ -1,0 +1,43 @@
+<h1>Listing invoice_positions</h1>
+
+<table>
+  <tr>
+    <th>Textposition</th>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Unit</th>
+    <th>Discount</th>
+    <th>Value</th>
+    <th>Vatrate</th>
+    <th>Price</th>
+    <th>Base price</th>
+    <th>Description</th>
+    <th>Created by</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @invoice_positions.each do |invoice_position| %>
+  <tr>
+    <td><%= invoice_position.textposition %></td>
+    <td><%= invoice_position.product_id %></td>
+    <td><%= invoice_position.quantity %></td>
+    <td><%= invoice_position.unit_id %></td>
+    <td><%= invoice_position.discount %></td>
+    <td><%= invoice_position.value %></td>
+    <td><%= invoice_position.vatrate %></td>
+    <td><%= invoice_position.price %></td>
+    <td><%= invoice_position.base_price %></td>
+    <td><%= invoice_position.description %></td>
+    <td><%= invoice_position.created_by %></td>
+    <td><%= link_to 'Show', invoice_position %></td>
+    <td><%= link_to 'Edit', edit_invoice_position_path(invoice_position) %></td>
+    <td><%= link_to 'Destroy', invoice_position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Invoice position', new_invoice_position_path %>

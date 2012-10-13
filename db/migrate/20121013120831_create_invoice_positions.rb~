@@ -1,0 +1,19 @@
+class CreateInvoicePositions < ActiveRecord::Migration
+  def change
+    create_table :invoice_positions do |t|
+      t.boolean :textposition
+      t.integer :product_id
+      t.integer :quantity
+      t.integer :unit_id
+      t.integer :discount
+      t.integer :value
+      t.integer :vatrate
+      t.integer :price
+      t.integer :base_price
+      t.text :description
+      t.integer :created_by
+
+      t.timestamps
+    end
+  end
+end

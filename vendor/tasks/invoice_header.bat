@@ -1,0 +1,1 @@
+rails generate scaffold invoice_header company_id:integer customer_id:integer reference_number:string currency_id:integer created_by:integer consignee:text dicount:integer discountvalue_header:integer discountvalue_position:integer taxvalue_full:integer taxvalue_half:integer valuevalue_netto_full:integer value_netto_half:integer value_netto:integer value_payed:integer 
