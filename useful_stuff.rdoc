@@ -1,18 +1,20 @@
-== standard procedure for creating of a resource
+== Standard Procedure for the Creation of a Resource
 
 1. Scaffold
-2. Migration: rake db:migrate
-3. Bootstrap: rails g bootstrap:themed Resources
-4. Abilty: models/abilty.rb
-5. Translation: de.yml
-6. Menu: sidebars/process.html.erb
+2. Migration: <tt>rake db:migrate</tt>
+3. Bootstrap: <tt>rails g bootstrap:themed Resources
+4. Abilty: <tt>models/abilty.rb</tt>
+5. Translation: <tt>confilg/locales/en.yml</tt>
+6. Menu: <tt>sidebars/process.html.erb</tt>
 7. Controller
-8. Model (company)
-9. Form (textile, company)
+8. Model <tt>app/models/company.rb</tt>
+9. Form (description => textile, company => not editable)
 10. Show
 11. Index
 
-== old generators (not used for this app, but maybe handy
+== Old Generators
+
+not used for this app, but maybe handy:
 
   rails generate migration add_fields_to_user firstname:string lastname:string function_id:integer role_in_company_id:integer deputy_id:integer parent_id:integer department_id:integer company_id:integer
 
@@ -22,16 +24,15 @@
   rails generate scaffold Department name:string company_id:integer
   rails generate scaffold RoleInCompany name:string company_id:integer
 
-=== several changes for correct plural name:
+=== Pluralization
+Several Changes are necessary for the correct pluralalization of a model with a name like RoleInCompany:
 
 <tt>nano role_in_company.rb</tt>
-
   set_table_name "roles_in_company"
   config/initializers/infelctions.rb
   inflect.irregular 'RoleInCompany', 'RolesInCompany'
 
 <tt>nano user.rb</tt>
-
   has_and_belongs_to_many :roles_in_company, :join_table => "roles_in_company_users"
 
 migration has to be written manually
