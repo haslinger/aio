@@ -80,3 +80,5 @@ add index manually:
   rails generate scaffold News name:string description:text
 
   rails generate migration add_author_and_area_to_business_processes created_by:integer updated_by:integer area:string
+
+  .
