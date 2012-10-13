@@ -3,7 +3,7 @@ class Assignment < ActiveRecord::Base
 
   validates_presence_of :role
   validates_presence_of :user
-  validates_uniqueness_of :role_id, :scope => :user_id
+  validates_uniqueness_of :role, :scope => :user_id
 
   belongs_to :user
   accepts_nested_attributes_for :user
