@@ -2,7 +2,7 @@
 
 1. Scaffold
 2. Migration: <tt>rake db:migrate</tt>
-3. Bootstrap: <tt>rails g bootstrap:themed Resources
+3. Bootstrap: <tt>rails g bootstrap:themed Resources</tt>
 4. Abilty: <tt>models/abilty.rb</tt>
 5. Translation: <tt>confilg/locales/en.yml</tt>
 6. Menu: <tt>sidebars/process.html.erb</tt>
