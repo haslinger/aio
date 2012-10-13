@@ -60,12 +60,6 @@ module ApplicationHelper
     check_box_tag("", "", value, :disabled => true)
   end
 
-  def process_modell
-    if @any_process = BusinessProcess.where(company_id: current_company.id).first
-      @any_process.root
-    end
-  end
-
   def username(id)
     if user = User.find_by_id(id)
       user.shortname
