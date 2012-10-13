@@ -3,8 +3,9 @@ class BusinessProcess < ActiveRecord::Base
   attr_accessible :company_id, :created_by, :description, :name
 
   validates_presence_of :name
-  validates_uniqueness_of :name
+  validates_uniqueness_of :name, :scope => :company_id
 
   validates_presence_of :company_id
   belongs_to :company
+  has_many :steps
 end

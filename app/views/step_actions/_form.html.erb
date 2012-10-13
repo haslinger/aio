@@ -1,0 +1,12 @@
+<%- model_class = StepAction -%>
+<%= bootstrap_error(@step_action, model_class ) %>
+
+<%= simple_form_for @step_action, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.association :step_model %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                step_actions_path, :class => 'btn' %>
+  </div>
+<% end %>

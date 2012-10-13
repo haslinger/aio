@@ -8,4 +8,6 @@ class Company < ActiveRecord::Base
   has_many :employments, :dependent => :restrict
 
   has_many :business_processes, :dependent => :restrict
+  has_many :steps, :dependent => :restrict
+  has_many :outgoing_arrows, :dependent => :restrict
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013134912) do
+ActiveRecord::Schema.define(:version => 20121013162217) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -117,6 +117,14 @@ ActiveRecord::Schema.define(:version => 20121013134912) do
     t.datetime "updated_at",                       :null => false
   end
 
+  create_table "outgoing_arrows", :force => true do |t|
+    t.integer  "step_id"
+    t.integer  "successor_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "company_id"
+  end
+
   create_table "paymentterms", :force => true do |t|
     t.integer  "company_id"
     t.string   "term"
@@ -151,6 +159,30 @@ ActiveRecord::Schema.define(:version => 20121013134912) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "step_actions", :force => true do |t|
+    t.string   "name"
+    t.integer  "step_model_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "step_models", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "steps", :force => true do |t|
+    t.string   "name"
+    t.integer  "company_id"
+    t.integer  "created_by"
+    t.string   "step_model_id"
+    t.string   "step_action_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.integer  "business_process_id"
   end
 
   create_table "units", :force => true do |t|

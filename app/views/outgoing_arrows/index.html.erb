@@ -1,0 +1,38 @@
+<%- model_class = OutgoingArrow -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human(:count => 2) %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:step_id) %></th>
+      <th><%= model_class.human_attribute_name(:successor_id) %></th>
+      <th><%= model_class.human_attribute_name(:company_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @outgoing_arrows.each do |outgoing_arrow| %>
+      <tr>
+        <td><%= link_to outgoing_arrow.step.name, outgoing_arrow_path(outgoing_arrow) %></td>
+        <td><%= outgoing_arrow.successor.name %></td>
+        <td><%= outgoing_arrow.company.name %></td>
+        <td><%=l outgoing_arrow.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_outgoing_arrow_path(outgoing_arrow), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      outgoing_arrow_path(outgoing_arrow),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human),
+            new_outgoing_arrow_path,
+            :class => 'btn btn-primary' %>
