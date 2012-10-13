@@ -5,7 +5,7 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-  <dd><%= @unit.company_id %></dd>
+  <dd><%= @unit.company.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
   <dd><%= @unit.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shorttext) %>:</strong></dt>

@@ -29,7 +29,7 @@
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
   <dd><%= @product.created_by %></dd>
 </dl>
-
+<%= versioning_helper(@product) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               products_path, :class => 'btn'  %>
