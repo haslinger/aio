@@ -1,4 +1,7 @@
 class Customer < ActiveRecord::Base
+
+  has_paper_trail
+  
   attr_accessible :academictitle, :city, :comment, :consignee, 
                   :contactperson, :country, :currency_id, :customergroup, 
                   :deletionflag, :discount, :email, :fax, 

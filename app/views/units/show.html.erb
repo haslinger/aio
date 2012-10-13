@@ -13,7 +13,7 @@
   <dt><strong><%= model_class.human_attribute_name(:isocode) %>:</strong></dt>
   <dd><%= @unit.isocode %></dd>
 </dl>
-
+<%= versioning_helper(@unit) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               units_path, :class => 'btn'  %>

@@ -21,7 +21,7 @@
   <dt><strong><%= model_class.human_attribute_name(:day3) %>:</strong></dt>
   <dd><%= @paymentterm.day3 %></dd>
 </dl>
-
+<%= versioning_helper(@currency) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               paymentterms_path, :class => 'btn'  %>

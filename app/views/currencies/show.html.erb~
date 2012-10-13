@@ -5,13 +5,13 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-  <dd><%= @currency.company_id %></dd>
+  <dd><%= @currency.company.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:currency) %>:</strong></dt>
   <dd><%= @currency.currency %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shorttext) %>:</strong></dt>
   <dd><%= @currency.shorttext %></dd>
 </dl>
-
+<%= versioning_helper(@business_process) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               currencies_path, :class => 'btn'  %>
