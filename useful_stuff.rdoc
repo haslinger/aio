@@ -29,23 +29,19 @@ Several Changes are necessary for the correct pluralalization of a model with a 
 
 <tt>nano role_in_company.rb</tt>
   set_table_name "roles_in_company"
-  config/initializers/infelctions.rb
+<tt>nano config/initializers/infelctions.rb</tt>
   inflect.irregular 'RoleInCompany', 'RolesInCompany'
-
 <tt>nano user.rb</tt>
   has_and_belongs_to_many :roles_in_company, :join_table => "roles_in_company_users"
 
-migration has to be written manually
-  rails generate migration create_functions_users
-
-migration has to be written manually
-  rails generate migration create_roles_in_company_users
-
+=== More Generators
+  rails generate migration create_functions_users #migration has to be written manually
+  rails generate migration create_roles_in_company_users #migration has to be written manually
   rails generate scaffold Employment user_id:integer company_id:integer
   rails generate scaffold DepartmentAffiliation user_id:integer department_id:integer
 
   rails g migration add_ancestry_to_users ancestry:string
-  add index manually:
+add index manually:
   add_index users, :ancestry
 
   rails generate migration add_description_to_role_in_company description:text
