@@ -1,0 +1,2 @@
+module OutgoingArrowsHelper
+end

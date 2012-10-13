@@ -16,4 +16,8 @@
   <li <%= active("products") %>><%= link_to icon_("gift") + t("activerecord.models.product.other"), products_path %></li>
   <li <%= active("units") %>><%= link_to icon_("beaker") + t("activerecord.models.unit.other"), units_path %></li>
   <li <%= active("business_processes") %>><%= link_to icon_("fast-forward") + t("activerecord.models.business_process.other"), business_processes_path %></li>
+  <li <%= active("steps") %>><%= link_to icon_("step-forward") + t("activerecord.models.step.other"), steps_path %></li>
+  <li <%= active("step_models") %>><%= link_to icon_("eject") + t("activerecord.models.step_model.other"), step_models_path %></li>
+  <li <%= active("step_actions") %>><%= link_to icon_("play") + t("activerecord.models.step_action.other"), step_actions_path %></li>
+  <li <%= active("outgoing_arrows") %>><%= link_to icon_("share") + t("activerecord.models.outgoing_arrow.other"), outgoing_arrows_path %></li>
 </ul>

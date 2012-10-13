@@ -10,6 +10,8 @@ class Ability
       can :create, User
       can :manage, Currency, :company_id => current_company.id
       can :manage, BusinessProcess, :company_id => current_company.id
+      can :manage, Step, :company_id => current_company.id
+      can :manage, OutgoingArrow, :company_id => current_company.id
     elsif
      # hebelt für's erste Berechtigungen aus
       can :show, :all

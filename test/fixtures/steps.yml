@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  company_id: 1
+  created_by: 1
+  process_id: 1
+  step_model_id: MyString
+  step_action_id: MyString
+
+two:
+  name: MyString
+  company_id: 1
+  created_by: 1
+  process_id: 1
+  step_model_id: MyString
+  step_action_id: MyString

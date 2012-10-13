@@ -1,0 +1,42 @@
+<%- model_class = Step -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human(:count => 2) %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:business_company_id) %></th>
+      <th><%= model_class.human_attribute_name(:process_id) %></th>
+      <th><%= model_class.human_attribute_name(:step_model_id) %></th>
+      <th><%= model_class.human_attribute_name(:step_action_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_by) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @steps.each do |step| %>
+      <tr>
+        <td><%= link_to step.name, step_path(step) %></td>
+        <td><%= step.company.name %></td>
+        <td><%= step.business_process.name %></td>
+        <td><%= step.step_model.name %></td>
+        <td><%= step.step_action.name %></td>
+        <td><%= created(step) %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_step_path(step), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      step_path(step),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human),
+            new_step_path,
+            :class => 'btn btn-primary' %>

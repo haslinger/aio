@@ -1,4 +1,12 @@
 Aio::Application.routes.draw do
+  resources :outgoing_arrows
+
+  resources :step_actions
+
+  resources :step_models
+
+  resources :steps
+
   resources :business_processes
 
   resources :invoice_positions

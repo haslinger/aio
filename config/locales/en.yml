@@ -266,15 +266,24 @@ en:
       function:
         one: Function
         other: Functions
+      incoming_arrow:
+        one: Incoming Arrow
+        other: Incoming Arrows
       invoice_header:
         one: Invoice Header
         other: Invoice Headers
       invoice_position:
         one: Invoice Position
         other: Invoice Positions
+      outgoing_arrow:
+        one: Outgoing Arrow
+        other: Outgoing Arrows
       paymentterm:
         one: Payment Term
         other: Payment Terms
+      predecessor:
+        one: Predecessor
+        other: Predecessors
       product:
         one: Product
         other: Products
@@ -284,9 +293,21 @@ en:
       role_in_company:
         one: Role
         other: Rroles
+      step:
+        one: Step
+        other: Steps
+      step_model:
+        one: Model in Step
+        other: Models in Steps
+      step_action:
+        one: Action in Step
+        other: Actions in Steps
       substitution:
         one: Substitution
         other: Substitutions
+      successor:
+        one: Successor
+        other: Successors
       unit:
         one: Unit
         other: Units

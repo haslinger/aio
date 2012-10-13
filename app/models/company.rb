@@ -11,8 +11,8 @@ class Company < ActiveRecord::Base
   has_many :units, :dependent => :restrict
   has_many :customers, :dependent => :restrict
   has_many :products, :dependent => :restrict
-  
-
   has_many :business_processes, :dependent => :restrict
+  has_many :steps, :dependent => :restrict
+  has_many :outgoing_arrows, :dependent => :restrict
 
 end
