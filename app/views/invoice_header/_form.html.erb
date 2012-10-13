@@ -1,0 +1,25 @@
+<%- model_class = InvoiceHeader -%>
+<%= bootstrap_error(@invoice_header, model_class ) %>
+
+<%= simple_form_for @invoice_header, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :company_id %>
+  <%= f.input :customer_id %>
+  <%= f.input :reference_number %>
+  <%= f.input :currency_id %>
+  <%= f.input :created_by %>
+  <%= f.input :consignee %>
+  <%= f.input :dicount %>
+  <%= f.input :discountvalue_header %>
+  <%= f.input :discountvalue_position %>
+  <%= f.input :taxvalue_full %>
+  <%= f.input :taxvalue_half %>
+  <%= f.input :valuevalue_netto_full %>
+  <%= f.input :value_netto_half %>
+  <%= f.input :value_netto %>
+  <%= f.input :value_payed %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invoice_header_path, :class => 'btn' %>
+  </div>
+<% end %>
