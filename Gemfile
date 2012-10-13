@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'                                 # latest stable Rails version on 09/06/11
 
+gem 'capistrano'                                      #deployment to linode
+
 gem 'mysql2'                                       # filebased database
 gem 'devise'                                         # authentification
 gem 'devise-i18n-views'                              # translated views for devise
