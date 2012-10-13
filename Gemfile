@@ -10,6 +10,7 @@ gem 'devise-i18n-views'                              # translated views for devi
 gem 'cancan'                                         # access control
 gem 'ancestry'                                       # hierarchical comments
 gem 'simple_form'                                    # simple forms
+gem 'country_select'
 gem "cocoon", :git => 'git://github.com/nathanvda/cocoon.git'                                      # nested_form_helper
 gem 'textile_editor_helper', :git => 'git://github.com/bridgeutopia/textile_editor_helper.git'     # Helper for buttons on textarea
 gem 'RedCloth'                                       # textile library

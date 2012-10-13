@@ -1,5 +1,11 @@
 Aio::Application.routes.draw do
 
+  resources :paymentterms
+
+  resources :currencies
+
+  resources :units
+
   resources :products
 
   resources :customers

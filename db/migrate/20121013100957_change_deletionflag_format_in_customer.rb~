@@ -1,0 +1,11 @@
+class ChangeDeletionflagFormatInCustomer < ActiveRecord::Migration
+
+  def up
+   change_column :customer, :deletionflag, :boolean
+  end
+
+  def self.down
+   change_column :customer, :deletionflag, :string
+  end 
+   
+end

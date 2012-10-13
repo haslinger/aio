@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013072742) do
+ActiveRecord::Schema.define(:version => 20121013102406) do
+
+  create_table "currencies", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "currency"
+    t.string   "shorttext"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "title"
@@ -32,14 +40,28 @@ ActiveRecord::Schema.define(:version => 20121013072742) do
     t.string   "taxcode"
     t.string   "salesman"
     t.text     "comment"
-    t.string   "deletionflag"
+    t.boolean  "deletionflag"
     t.string   "contactperson"
     t.string   "discount"
     t.text     "consignee"
     t.string   "currency"
-    t.integer  "user_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "created_by"
+    t.integer  "company_id"
+  end
+
+  create_table "paymentterms", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "term"
+    t.string   "shorttext"
+    t.integer  "day1"
+    t.integer  "percent1"
+    t.integer  "day2"
+    t.integer  "percent2"
+    t.integer  "day3"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "products", :force => true do |t|
@@ -49,13 +71,23 @@ ActiveRecord::Schema.define(:version => 20121013072742) do
     t.string   "productgroup"
     t.string   "eannumber"
     t.string   "taxcode"
-    t.string   "deletionflag"
+    t.boolean  "deletionflag"
     t.string   "baseunit"
     t.decimal  "salesprice",    :precision => 10, :scale => 0
     t.decimal  "purchaseprice", :precision => 10, :scale => 0
-    t.integer  "user_id"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
+    t.integer  "created_by"
+    t.integer  "company_id"
+  end
+
+  create_table "units", :force => true do |t|
+    t.integer  "company_id"
+    t.string   "unit"
+    t.string   "shorttext"
+    t.string   "isocode"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

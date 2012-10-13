@@ -1,125 +1,67 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Customer -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @customer.title %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @customer.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:academictitle) %>:</strong></dt>
+  <dd><%= @customer.academictitle %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lastname) %>:</strong></dt>
+  <dd><%= @customer.lastname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:firstname) %>:</strong></dt>
+  <dd><%= @customer.firstname %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:street) %>:</strong></dt>
+  <dd><%= @customer.street %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zipcode) %>:</strong></dt>
+  <dd><%= @customer.zipcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+  <dd><%= @customer.city %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+  <dd><%= @customer.country %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @customer.phone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
+  <dd><%= @customer.fax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mobil) %>:</strong></dt>
+  <dd><%= @customer.mobil %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @customer.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxnumber) %>:</strong></dt>
+  <dd><%= @customer.taxnumber %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paymentterms) %>:</strong></dt>
+  <dd><%= @customer.paymentterms %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:customergroup) %>:</strong></dt>
+  <dd><%= @customer.customergroup %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:taxcode) %>:</strong></dt>
+  <dd><%= @customer.taxcode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salesman) %>:</strong></dt>
+  <dd><%= @customer.salesman %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:comment) %>:</strong></dt>
+  <dd><%= @customer.comment %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deletionflag) %>:</strong></dt>
+  <dd><%= @customer.deletionflag %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contactperson) %>:</strong></dt>
+  <dd><%= @customer.contactperson %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:discount) %>:</strong></dt>
+  <dd><%= @customer.discount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:consignee) %>:</strong></dt>
+  <dd><%= @customer.consignee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:currency) %>:</strong></dt>
+  <dd><%= @customer.currency %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= @customer.created_by %></dd>
+</dl>
 
-<p>
-  <b>Academictitle:</b>
-  <%= @customer.academictitle %>
-</p>
-
-<p>
-  <b>Lastname:</b>
-  <%= @customer.lastname %>
-</p>
-
-<p>
-  <b>Firstname:</b>
-  <%= @customer.firstname %>
-</p>
-
-<p>
-  <b>Street:</b>
-  <%= @customer.street %>
-</p>
-
-<p>
-  <b>Zipcode:</b>
-  <%= @customer.zipcode %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @customer.city %>
-</p>
-
-<p>
-  <b>Country:</b>
-  <%= @customer.country %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%= @customer.fax %>
-</p>
-
-<p>
-  <b>Mobil:</b>
-  <%= @customer.mobil %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @customer.email %>
-</p>
-
-<p>
-  <b>Taxnumber:</b>
-  <%= @customer.taxnumber %>
-</p>
-
-<p>
-  <b>Paymentterms:</b>
-  <%= @customer.paymentterms %>
-</p>
-
-<p>
-  <b>Customergroup:</b>
-  <%= @customer.customergroup %>
-</p>
-
-<p>
-  <b>Taxcode:</b>
-  <%= @customer.taxcode %>
-</p>
-
-<p>
-  <b>Salesman:</b>
-  <%= @customer.salesman %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= @customer.comment %>
-</p>
-
-<p>
-  <b>Deletionflag:</b>
-  <%= @customer.deletionflag %>
-</p>
-
-<p>
-  <b>Contactperson:</b>
-  <%= @customer.contactperson %>
-</p>
-
-<p>
-  <b>Discount:</b>
-  <%= @customer.discount %>
-</p>
-
-<p>
-  <b>Consignee:</b>
-  <%= @customer.consignee %>
-</p>
-
-<p>
-  <b>Currency:</b>
-  <%= @customer.currency %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @customer.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              customers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_customer_path(@customer), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              customer_path(@customer),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

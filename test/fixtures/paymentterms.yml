@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  term: MyString
+  shorttext: MyString
+  day1: 1
+  percent1: 1
+  day2: 1
+  percent2: 1
+  day3: 1
+
+two:
+  company_id: 1
+  term: MyString
+  shorttext: MyString
+  day1: 1
+  percent1: 1
+  day2: 1
+  percent2: 1
+  day3: 1
