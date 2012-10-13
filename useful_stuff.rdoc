@@ -107,3 +107,6 @@ in +config/routes.rb+ to be able to successfully scaffold
 
 * Simpleform
    rails generate simple_form:install --bootstrap
+
+* Textile Editor Helper
+  rails g textile_editor_helper:install

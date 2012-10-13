@@ -25,8 +25,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'                     # enables Coffeescript in addition to Javascript
   gem 'therubyracer', :platforms => :ruby            # serverside Javascript engine
   gem 'uglifier', '>= 1.0.3'                         # Javascript compressor
-  gem "twitter-bootstrap-rails"
-#  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
                                                      # Twitter Bootstrap for Rails 3.1 Asset Pipeline
   gem 'jquery-ui-rails'                              # JQuery-UI assets
 end
