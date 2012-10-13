@@ -34,11 +34,11 @@ gem 'jquery-rails'                                   # Javascript framework
 
 group :test, :development do
   gem 'debugger'                                     # command line debugger
-  gem 'simplecov', :require => false                 # code coverage tool
-  gem "rspec-rails"                                  # unit test framwork in addition to TestUnit
-  gem 'cucumber-rails', :require => false            # BDD framework
-  gem 'database_cleaner'                             # addon for databaqse cleaning during tests
-  gem "capybara"                                     # Acceptance test framework for web applications
-  gem 'email_spec'                                   # rspec matchers and cucumber steps for testing email
-  gem "shoulda"                                      # expands rspec matcher, e.g. should validate_uniqueness_of
+#  gem 'simplecov', :require => false                 # code coverage tool
+#  gem "rspec-rails"                                  # unit test framwork in addition to TestUnit
+#  gem 'cucumber-rails', :require => false            # BDD framework
+#  gem 'database_cleaner'                             # addon for databaqse cleaning during tests
+#  gem "capybara"                                     # Acceptance test framework for web applications
+# gem 'email_spec'                                   # rspec matchers and cucumber steps for testing email
+# gem "shoulda"                                      # expands rspec matcher, e.g. should validate_uniqueness_of
 end
