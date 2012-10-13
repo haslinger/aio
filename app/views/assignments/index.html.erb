@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:role_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,9 +14,8 @@
   <tbody>
     <% @assignments.each do |assignment| %>
       <tr>
-        <td><%= link_to assignment.id, assignment_path(assignment) %></td>
-        <td><%= assignment.user_id %></td>
-        <td><%= assignment.role_id %></td>
+        <td><%= assignment.user.name %></td>
+        <td><%= assignment.role.name %></td>
         <td><%=l assignment.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -33,6 +31,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human),
             new_assignment_path,
             :class => 'btn btn-primary' %>
