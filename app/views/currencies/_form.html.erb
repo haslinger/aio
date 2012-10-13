@@ -1,3 +1,6 @@
+<%- model_class = Currency -%>
+<%= bootstrap_error(@currency, model_class ) %>
+
 <%= simple_form_for @currency, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :company_id %>
   <%= f.input :currency %>
