@@ -261,6 +261,12 @@ en:
       function:
         one: Function
         other: Functions
+      invoice_header:
+        one: Invoice Header
+        other: Invoice Headers
+      invoice_position:
+        one: Invoice Position
+        other: Invoice Positions
       paymentterm:
         one: Payment Term
         other: Payment Terms
