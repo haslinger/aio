@@ -31,6 +31,7 @@ Several Changes are necessary for the correct pluralalization of a model with a 
   set_table_name "roles_in_company"
 <tt>nano config/initializers/infelctions.rb</tt>
   inflect.irregular 'RoleInCompany', 'RolesInCompany'
+  inflect.irregular 'role_in_company', 'roles_in_company'
 <tt>nano user.rb</tt>
   has_and_belongs_to_many :roles_in_company, :join_table => "roles_in_company_users"
 
