@@ -7,4 +7,5 @@ class Company < ActiveRecord::Base
   has_many :users, :through => :employments, :dependent => :restrict
   has_many :employments, :dependent => :restrict
 
+  has_many :business_processes, :dependent => :restrict
 end
