@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20121013101735) do
+ActiveRecord::Schema.define(:version => 20121013102406) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -23,14 +22,14 @@ ActiveRecord::Schema.define(:version => 20121013101735) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
-=======
-ActiveRecord::Schema.define(:version => 20121013102406) do
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "currencies", :force => true do |t|
     t.integer  "company_id"
     t.string   "currency"
     t.string   "shorttext"
->>>>>>> cd559cb880b21ef4164f5e03f246600e06948cf0
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -65,6 +64,13 @@ ActiveRecord::Schema.define(:version => 20121013102406) do
     t.integer  "company_id"
   end
 
+  create_table "employments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "paymentterms", :force => true do |t|
     t.integer  "company_id"
     t.string   "term"
@@ -74,13 +80,6 @@ ActiveRecord::Schema.define(:version => 20121013102406) do
     t.integer  "day2"
     t.integer  "percent2"
     t.integer  "day3"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "employments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "company_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -102,17 +101,17 @@ ActiveRecord::Schema.define(:version => 20121013102406) do
     t.integer  "company_id"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "units", :force => true do |t|
     t.integer  "company_id"
     t.string   "unit"
     t.string   "shorttext"
     t.string   "isocode"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "roles", :force => true do |t|
-    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
