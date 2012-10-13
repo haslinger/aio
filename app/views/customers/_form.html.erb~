@@ -1,0 +1,34 @@
+<%= simple_form_for(@customer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :academictitle %>
+    <%= f.input :lastname %>
+    <%= f.input :firstname %>
+    <%= f.input :street %>
+    <%= f.input :zipcode %>
+    <%= f.input :city %>
+    <%= f.input :country %>
+    <%= f.input :phone %>
+    <%= f.input :fax %>
+    <%= f.input :mobil %>
+    <%= f.input :email %>
+    <%= f.input :taxnumber %>
+    <%= f.input :paymentterms %>
+    <%= f.input :customergroup %>
+    <%= f.input :taxcode %>
+    <%= f.input :salesman %>
+    <%= f.input :comment %>
+    <%= f.input :deletionflag %>
+    <%= f.input :contactperson %>
+    <%= f.input :discount %>
+    <%= f.input :consignee %>
+    <%= f.input :currency %>
+    <%= f.input :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

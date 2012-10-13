@@ -1,0 +1,69 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Academictitle</th>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Street</th>
+    <th>Zipcode</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Phone</th>
+    <th>Fax</th>
+    <th>Mobil</th>
+    <th>Email</th>
+    <th>Taxnumber</th>
+    <th>Paymentterms</th>
+    <th>Customergroup</th>
+    <th>Taxcode</th>
+    <th>Salesman</th>
+    <th>Comment</th>
+    <th>Deletionflag</th>
+    <th>Contactperson</th>
+    <th>Discount</th>
+    <th>Consignee</th>
+    <th>Currency</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.title %></td>
+    <td><%= customer.academictitle %></td>
+    <td><%= customer.lastname %></td>
+    <td><%= customer.firstname %></td>
+    <td><%= customer.street %></td>
+    <td><%= customer.zipcode %></td>
+    <td><%= customer.city %></td>
+    <td><%= customer.country %></td>
+    <td><%= customer.phone %></td>
+    <td><%= customer.fax %></td>
+    <td><%= customer.mobil %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.taxnumber %></td>
+    <td><%= customer.paymentterms %></td>
+    <td><%= customer.customergroup %></td>
+    <td><%= customer.taxcode %></td>
+    <td><%= customer.salesman %></td>
+    <td><%= customer.comment %></td>
+    <td><%= customer.deletionflag %></td>
+    <td><%= customer.contactperson %></td>
+    <td><%= customer.discount %></td>
+    <td><%= customer.consignee %></td>
+    <td><%= customer.currency %></td>
+    <td><%= customer.user_id %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>

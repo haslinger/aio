@@ -1,0 +1,1 @@
+rails generate scaffold products productkey:string shorttext:string description:text productgroup:string eannumber:string taxcode:string deletionflag:string baseunit:string salesprice:decimal purchaseprice:decimal user_id:integer 

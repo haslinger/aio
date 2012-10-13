@@ -11,7 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013041215) do
+ActiveRecord::Schema.define(:version => 20121013073702) do
+
+  create_table "customers", :force => true do |t|
+    t.string   "title"
+    t.string   "academictitle"
+    t.string   "lastname"
+    t.string   "firstname"
+    t.string   "street"
+    t.string   "zipcode"
+    t.string   "city"
+    t.string   "country"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "mobil"
+    t.string   "email"
+    t.string   "taxnumber"
+    t.string   "paymentterms"
+    t.string   "customergroup"
+    t.string   "taxcode"
+    t.string   "salesman"
+    t.text     "comment"
+    t.string   "deletionflag"
+    t.string   "contactperson"
+    t.string   "discount"
+    t.text     "consignee"
+    t.string   "currency"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "productkey"
+    t.string   "shorttext"
+    t.text     "description"
+    t.string   "productgroup"
+    t.string   "eannumber"
+    t.string   "taxcode"
+    t.string   "deletionflag"
+    t.string   "baseunit"
+    t.decimal  "salesprice",    :precision => 10, :scale => 0
+    t.decimal  "purchaseprice", :precision => 10, :scale => 0
+    t.integer  "user_id"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

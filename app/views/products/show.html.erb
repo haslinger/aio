@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Productkey:</b>
+  <%= @product.productkey %>
+</p>
+
+<p>
+  <b>Shorttext:</b>
+  <%= @product.shorttext %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Productgroup:</b>
+  <%= @product.productgroup %>
+</p>
+
+<p>
+  <b>Eannumber:</b>
+  <%= @product.eannumber %>
+</p>
+
+<p>
+  <b>Taxcode:</b>
+  <%= @product.taxcode %>
+</p>
+
+<p>
+  <b>Deletionflag:</b>
+  <%= @product.deletionflag %>
+</p>
+
+<p>
+  <b>Baseunit:</b>
+  <%= @product.baseunit %>
+</p>
+
+<p>
+  <b>Salesprice:</b>
+  <%= @product.salesprice %>
+</p>
+
+<p>
+  <b>Purchaseprice:</b>
+  <%= @product.purchaseprice %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @product.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
