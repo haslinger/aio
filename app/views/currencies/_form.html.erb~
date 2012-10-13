@@ -8,6 +8,7 @@
     <%= f.association :company, :disabled => true, :selected => current_company.id %>
     <%= f.hidden_field :company_id, :value => current_company.id %>
   <% end %>
+  <%#= f.input :company_id %>
   <%= f.input :currency %>
   <%= f.input :shorttext %>
   <div class="form-actions">

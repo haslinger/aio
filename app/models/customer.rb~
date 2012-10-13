@@ -1,7 +1,13 @@
 class Customer < ActiveRecord::Base
   attr_accessible :academictitle, :city, :comment, :consignee, 
-                  :contactperson, :country, :currency, :customergroup, 
+                  :contactperson, :country, :currency_id, :customergroup, 
                   :deletionflag, :discount, :email, :fax, 
-                  :firstname, :lastname, :mobil, :paymentterms, :phone, :salesman, :street, 
-                  :taxcode, :taxnumber, :title, :user_id, :zipcode
+                  :firstname, :lastname, :mobil, :paymentterm_id, :phone, :salesman, :street, 
+                  :taxcode, :taxnumber, :title, :created_by, :zipcode
+
+  validates_presence_of :lastname, :street, :zipcode, :city, :country, :currency_id, :paymentterm_id
+  belongs_to :paymentterm
+  belongs_to :currency
+  belongs_to :company
+  
 end

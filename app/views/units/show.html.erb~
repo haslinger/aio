@@ -1,24 +1,26 @@
-<%- model_class = Currency -%>
+<%- model_class = Unit -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-  <dd><%= @currency.company.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:currency) %>:</strong></dt>
-  <dd><%= @currency.currency %></dd>
+  <dd><%= @unit.company_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:unit) %>:</strong></dt>
+  <dd><%= @unit.unit %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shorttext) %>:</strong></dt>
-  <dd><%= @currency.shorttext %></dd>
+  <dd><%= @unit.shorttext %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:isocode) %>:</strong></dt>
+  <dd><%= @unit.isocode %></dd>
 </dl>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              currencies_path, :class => 'btn'  %>
+              units_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_currency_path(@currency), :class => 'btn' %>
+              edit_unit_path(@unit), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              currency_path(@currency),
+              unit_path(@unit),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

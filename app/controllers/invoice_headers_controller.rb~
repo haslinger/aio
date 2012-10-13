@@ -1,5 +1,4 @@
 class InvoiceHeadersController < ApplicationController
-load_and_authorize_resource 
   # GET /invoice_headers
   # GET /invoice_headers.json
   def index

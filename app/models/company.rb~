@@ -7,9 +7,5 @@ class Company < ActiveRecord::Base
   has_many :users, :through => :employments, :dependent => :restrict
   has_many :employments, :dependent => :restrict
   has_many :currencies, :dependent => :restrict
-  has_many :paymentterms, :dependent => :restrict
-  has_many :units, :dependent => :restrict
-  has_many :customers, :dependent => :restrict
-  has_many :products, :dependent => :restrict
-  
+
 end

@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:company_id) %></th>
       <th><%= model_class.human_attribute_name(:currency) %></th>
       <th><%= model_class.human_attribute_name(:shorttext) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -17,7 +16,6 @@
     <% @currencies.each do |currency| %>
       <tr>
         <td><%= link_to currency.id, currency_path(currency) %></td>
-        <td><%= currency.company_id %></td>
         <td><%= currency.currency %></td>
         <td><%= currency.shorttext %></td>
         <td><%=l currency.created_at %></td>

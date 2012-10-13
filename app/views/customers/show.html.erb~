@@ -30,8 +30,8 @@
   <dd><%= @customer.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:taxnumber) %>:</strong></dt>
   <dd><%= @customer.taxnumber %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:paymentterms) %>:</strong></dt>
-  <dd><%= @customer.paymentterms %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:paymentterm_id) %>:</strong></dt>
+  <dd><%= @customer.paymentterm.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:customergroup) %>:</strong></dt>
   <dd><%= @customer.customergroup %></dd>
   <dt><strong><%= model_class.human_attribute_name(:taxcode) %>:</strong></dt>
@@ -48,10 +48,10 @@
   <dd><%= @customer.discount %></dd>
   <dt><strong><%= model_class.human_attribute_name(:consignee) %>:</strong></dt>
   <dd><%= @customer.consignee %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:currency) %>:</strong></dt>
-  <dd><%= @customer.currency %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @customer.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:currency_id) %>:</strong></dt>
+  <dd><%= @customer.currency.shorttext %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= @customer.created_by %></dd>
 </dl>
 
 <div class="form-actions">

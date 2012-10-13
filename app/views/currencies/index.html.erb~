@@ -1,6 +1,6 @@
 <%- model_class = Currency -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1><%=t '.title', :default => model_class.model_name.human(:count => 2) %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -35,6 +35,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human),
             new_currency_path,
             :class => 'btn btn-primary' %>
