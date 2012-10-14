@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 #  end
 
   # HAS: 20120416: Ausnahmen werden in den einzelnen Controllern spezifiziert
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :read
 
   before_filter :set_locale
   before_filter :set_menu

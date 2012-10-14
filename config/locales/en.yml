@@ -278,6 +278,9 @@ en:
       outgoing_arrow:
         one: Outgoing Arrow
         other: Outgoing Arrows
+      page:
+        one: Page
+        other: Pages
       paymentterm:
         one: Payment Term
         other: Payment Terms

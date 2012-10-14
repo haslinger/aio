@@ -1,4 +1,10 @@
 Aio::Application.routes.draw do
+  resources :pages do
+    member do
+     get "read"
+    end
+  end
+
   resources :token_statuses
 
   resources :tokens
@@ -37,5 +43,5 @@ Aio::Application.routes.draw do
   resources :currencies
   resources :units
 
-  root :to => 'admin/users#index'
+  root :to => "pages#read", :id => "1"
 end
