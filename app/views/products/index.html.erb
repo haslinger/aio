@@ -34,6 +34,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.new"), :model => model_class.model_name.human),
             new_product_path,
             :class => 'btn btn-primary' %>

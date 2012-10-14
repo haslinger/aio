@@ -5,32 +5,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:company_id) %></th>
       <th><%= model_class.human_attribute_name(:term) %></th>
       <th><%= model_class.human_attribute_name(:shorttext) %></th>
-      <th><%= model_class.human_attribute_name(:day1) %></th>
-      <th><%= model_class.human_attribute_name(:percent1) %></th>
-      <th><%= model_class.human_attribute_name(:day2) %></th>
-      <th><%= model_class.human_attribute_name(:percent2) %></th>
-      <th><%= model_class.human_attribute_name(:day3) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @paymentterms.each do |paymentterm| %>
       <tr>
-        <td><%= link_to paymentterm.id, paymentterm_path(paymentterm) %></td>
-        <td><%= paymentterm.company_id %></td>
         <td><%= paymentterm.term %></td>
         <td><%= paymentterm.shorttext %></td>
-        <td><%= paymentterm.day1 %></td>
-        <td><%= paymentterm.percent1 %></td>
-        <td><%= paymentterm.day2 %></td>
-        <td><%= paymentterm.percent2 %></td>
-        <td><%= paymentterm.day3 %></td>
-        <td><%=l paymentterm.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_paymentterm_path(paymentterm), :class => 'btn btn-mini' %>

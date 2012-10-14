@@ -9,8 +9,11 @@ class Customer < ActiveRecord::Base
                   :taxcode, :taxnumber, :title, :created_by, :zipcode, :company_id
 
   validates_presence_of :lastname, :street, :zipcode, :city, :country, :currency_id, :paymentterm_id
+  
   belongs_to :paymentterm
   belongs_to :currency
   belongs_to :company
+  
+  has_many :invoice_headers, :dependent => :restrict
   
 end

@@ -5,13 +5,13 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-  <dd><%= @invoice_header.company_id %></dd>
+  <dd><%= @invoice_header.company.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:customer_id) %>:</strong></dt>
-  <dd><%= @invoice_header.customer_id %></dd>
+  <dd><%= @invoice_header.customer.lastname %></dd>
   <dt><strong><%= model_class.human_attribute_name(:reference_number) %>:</strong></dt>
   <dd><%= @invoice_header.reference_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:currency_id) %>:</strong></dt>
-  <dd><%= @invoice_header.currency_id %></dd>
+  <dd><%= @invoice_header.currency.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
   <dd><%= @invoice_header.created_by %></dd>
   <dt><strong><%= model_class.human_attribute_name(:consignee) %>:</strong></dt>

@@ -5,38 +5,21 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:productkey) %></th>
       <th><%= model_class.human_attribute_name(:shorttext) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:productgroup) %></th>
-      <th><%= model_class.human_attribute_name(:eannumber) %></th>
-      <th><%= model_class.human_attribute_name(:taxcode) %></th>
-      <th><%= model_class.human_attribute_name(:deletionflag) %></th>
       <th><%= model_class.human_attribute_name(:baseunit) %></th>
-      <th><%= model_class.human_attribute_name(:salesprice) %></th>
-      <th><%= model_class.human_attribute_name(:purchaseprice) %></th>
-      <th><%= model_class.human_attribute_name(:created_by) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.productkey %></td>
         <td><%= product.shorttext %></td>
-        <td><%= product.description %></td>
         <td><%= product.productgroup %></td>
-        <td><%= product.eannumber %></td>
-        <td><%= product.taxcode %></td>
-        <td><%= product.deletionflag %></td>
         <td><%= product.baseunit %></td>
-        <td><%= product.salesprice %></td>
-        <td><%= product.purchaseprice %></td>
-        <td><%= product.created_by %></td>
-        <td><%=l product.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-mini' %>

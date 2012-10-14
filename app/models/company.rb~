@@ -6,15 +6,13 @@ class Company < ActiveRecord::Base
 
   has_many :users, :through => :employments, :dependent => :restrict
   has_many :employments, :dependent => :restrict
-<<<<<<< HEAD
   has_many :currencies, :dependent => :restrict
   has_many :paymentterms, :dependent => :restrict
   has_many :units, :dependent => :restrict
   has_many :customers, :dependent => :restrict
   has_many :products, :dependent => :restrict
-  
-=======
-
   has_many :business_processes, :dependent => :restrict
->>>>>>> 7d92e435a51743a56fbfb21ee55977d47c9f11c6
+  has_many :steps, :dependent => :restrict
+  has_many :outgoing_arrows, :dependent => :restrict
+
 end

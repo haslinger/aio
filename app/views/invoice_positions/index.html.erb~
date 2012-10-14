@@ -6,10 +6,19 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:invoice_header_id) %></th>
       <th><%= model_class.human_attribute_name(:textposition) %></th>
       <th><%= model_class.human_attribute_name(:product_id) %></th>
       <th><%= model_class.human_attribute_name(:quantity) %></th>
       <th><%= model_class.human_attribute_name(:unit_id) %></th>
+      <th><%= model_class.human_attribute_name(:discount) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:vatrate) %></th>
+      <th><%= model_class.human_attribute_name(:price) %></th>
+      <th><%= model_class.human_attribute_name(:base_price) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_by) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,10 +26,19 @@
     <% @invoice_positions.each do |invoice_position| %>
       <tr>
         <td><%= link_to invoice_position.id, invoice_position_path(invoice_position) %></td>
+        <td><%= invoice_position.invoice_header_id %></td>
         <td><%= invoice_position.textposition %></td>
-        <td><%= invoice_position.product.shorttext %></td>
+        <td><%= invoice_position.product_id %></td>
         <td><%= invoice_position.quantity %></td>
-        <td><%= invoice_position.unit.shorttext %></td>
+        <td><%= invoice_position.unit_id %></td>
+        <td><%= invoice_position.discount %></td>
+        <td><%= invoice_position.value %></td>
+        <td><%= invoice_position.vatrate %></td>
+        <td><%= invoice_position.price %></td>
+        <td><%= invoice_position.base_price %></td>
+        <td><%= invoice_position.description %></td>
+        <td><%= invoice_position.created_by %></td>
+        <td><%=l invoice_position.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_invoice_position_path(invoice_position), :class => 'btn btn-mini' %>

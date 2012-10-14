@@ -1,4 +1,5 @@
 class InvoicePositionsController < ApplicationController
+load_and_authorize_resource
   # GET /invoice_positions
   # GET /invoice_positions.json
   def index

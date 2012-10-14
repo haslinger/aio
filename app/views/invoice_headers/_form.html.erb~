@@ -2,10 +2,15 @@
 <%= bootstrap_error(@invoice_header, model_class ) %>
 
 <%= simple_form_for @invoice_header, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.input :company_id %>
-  <%= f.input :customer_id %>
+  <% if @invoice_header.company_id %>
+    <%= f.association :company, :disabled => true %>
+  <% else %>
+    <%= f.association :company, :disabled => true, :selected => current_company.id %>
+    <%= f.hidden_field :company_id, :value => current_company.id %>
+  <% end %>
+  <%= f.association :customer_id, :label_method => :lastname %>
   <%= f.input :reference_number %>
-  <%= f.input :currency_id %>
+  <%= f.association :currency_id, :label_method => :shorttext %>
   <%= f.input :created_by %>
   <%= f.input :consignee %>
   <%= f.input :dicount %>
