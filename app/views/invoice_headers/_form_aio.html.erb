@@ -6,6 +6,8 @@
     <%= f.association :company, :disabled => true, :selected => current_company.id %>
     <%= f.hidden_field :company_id, :value => current_company.id %>
   <% end %>
+
+  <%= hidden_field_tag :token, @token.id %>
   <%= f.association :customer, :label_method => :lastname %>
   <%= f.input :reference_number %>
   <%= f.association :currency, :label_method => :shorttext %>
@@ -18,20 +20,18 @@
   <div class="span3"></div>
 </div>
 </div>
-  
+
  <div class="row-fluid">
 
   <%= f.simple_fields_for :invoice_positions, :html => { :class => 'form-inline' } do |pos| %>
-   
+
     <div class="span2"><%= pos.association :product, :label => false, :label_method => 'shorttext', :input_html => { :class => ".span2"} %></div>
     <div class="span1"><%= pos.input :quantity, :label => false, :input_html => { :class => "input-mini"} %></div>
-    <div class="span1"><%= pos.association :unit, :label => false, :label_method => 'shorttext', :input_html => { :class => ".span1"} %>  </div>    
+    <div class="span1"><%= pos.association :unit, :label => false, :label_method => 'shorttext', :input_html => { :class => ".span1"} %>  </div>
     <div class="span3"><%= pos.link_to_remove "Delete Position", :class => "btn" %></div>
     <div class=clearfix></div>
-  <% end %> 
-<%= f.link_to_add "Add a Position", :invoice_positions, :class => "btn" %> 
+  <% end %>
+<%= f.link_to_add "Add a Position", :invoice_positions, :class => "btn" %>
 
-      
+
      </div>
-  
-
