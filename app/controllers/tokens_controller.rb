@@ -44,6 +44,7 @@ class TokensController < ApplicationController
 
      if @successors.any?
       @token.step_id = @successors.first.id
+      @token.save
       # next step
       redirect_to edit_aio_token_path
     else
