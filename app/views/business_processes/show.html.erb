@@ -10,6 +10,8 @@
   <dd><%= created(@business_process) %>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @business_process.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
+  <dd><%= @business_process.versions.last.index %></dd>
 </dl>
 
 <ul class="nav nav-tabs" id="myTab">

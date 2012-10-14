@@ -1,0 +1,19 @@
+<%- model_class = ProcessInstance -%>
+<%= bootstrap_error(@process_instance, model_class ) %>
+
+<%= simple_form_for @process_instance, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <% if @process_instance.company_id %>
+    <%= f.association :company, :disabled => true %>
+  <% else %>
+    <%= f.association :company, :disabled => true, :selected => current_company.id %>
+    <%= f.hidden_field :company_id, :value => current_company.id %>
+  <% end %>
+
+  <%= f.association :business_process, :collection => BusinessProcess.where(:company_id => current_company.id) %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                process_instances_path, :class => 'btn' %>
+  </div>
+<% end %>

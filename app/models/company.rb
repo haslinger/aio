@@ -15,5 +15,7 @@ class Company < ActiveRecord::Base
   has_many :steps, :dependent => :restrict
   has_many :outgoing_arrows, :dependent => :restrict
   has_many :invoice_headers, :dependent => :restrict
-  
+  has_many :process_instances, :dependent => :restrict
+  has_many :tokens, :dependent => :restrict
+
 end

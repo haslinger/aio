@@ -12,6 +12,8 @@ class Ability
       can :manage, BusinessProcess, :company_id => current_company.id
       can :manage, Step, :company_id => current_company.id
       can :manage, OutgoingArrow, :company_id => current_company.id
+      can :manage, ProcessInstance, :company_id => current_company.id
+      can :manage, Token, :company_id => current_company.id
     elsif
      # hebelt für's erste Berechtigungen aus
       can :show, :all

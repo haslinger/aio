@@ -118,7 +118,7 @@ module ApplicationHelper
     output << "</dd>"
   end
 
-  def versioning_helper(object)
-    render partial: "shared/versioning_helper", locals: { :object => object }
+  def versioning_helper(object, active = false)
+    render partial: "shared/versioning_helper", locals: { :object => object, :active => active }
   end
 end

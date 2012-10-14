@@ -1,0 +1,11 @@
+<%- model_class = TokenStatus -%>
+<%= bootstrap_error(@token_status, model_class ) %>
+
+<%= simple_form_for @token_status, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                token_statuses_path, :class => 'btn' %>
+  </div>
+<% end %>

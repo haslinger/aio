@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  process_instance_id: 1
+  step_id: 1
+  created_by: 1
+  updated_by: 1
+  token_status_id: 1
+  last_step_id: 1
+  object_id: 1
+
+two:
+  company_id: 1
+  process_instance_id: 1
+  step_id: 1
+  created_by: 1
+  updated_by: 1
+  token_status_id: 1
+  last_step_id: 1
+  object_id: 1

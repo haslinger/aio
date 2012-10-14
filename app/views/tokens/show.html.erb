@@ -1,0 +1,43 @@
+<%- model_class = Token -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
+  <dd><%= @token.company.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:process_instance_id) %>:</strong></dt>
+  <dd><%= @token.process_instance %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:step_id) %>:</strong></dt>
+  <dd><%= @token.step.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= created(@token) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:updated_by) %>:</strong></dt>
+  <dd><%= updated(@token) %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:token_status_id) %>:</strong></dt>
+  <dd><%= @token.token_status.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_step_id) %>:</strong></dt>
+  <dd><%= @token.last_step.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:object_id) %>:</strong></dt>
+  <dd><%= @token.object_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>
+  <dd><%= @token.versions.last.index %></dd>
+</dl>
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><a href="#versions" data-toggle="tab"><%= model_class.human_attribute_name(:versions) %></a></li>
+  </ul>
+  <div class="tab-content">
+    <%= versioning_helper(@token, :active) %>
+  </div>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tokens_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_token_path(@token), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              token_path(@token),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
