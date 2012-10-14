@@ -19,7 +19,7 @@
         <td><%= product.productkey %></td>
         <td><%= product.shorttext %></td>
         <td><%= product.productgroup %></td>
-        <td><%= product.baseunit %></td>
+        <td><%= product.unit.shorttext %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_product_path(product), :class => 'btn btn-mini' %>

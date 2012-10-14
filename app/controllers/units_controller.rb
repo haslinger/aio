@@ -2,6 +2,7 @@ class UnitsController < ApplicationController
 load_and_authorize_resource  
 
   def create
+    @unit.created_by = current_user.id
     if @unit.save
       redirect_to @unit, notice: 'Unit was successfully created.'
     else

@@ -53,7 +53,7 @@
   <dt><strong><%= model_class.human_attribute_name(:currency_id) %>:</strong></dt>
   <dd><%= @customer.currency.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
-  <dd><%= @customer.created_by %></dd>
+  <dd><%= created(@customer) %>
 </dl>
 <%= versioning_helper(@customer) %>
 <div class="form-actions">

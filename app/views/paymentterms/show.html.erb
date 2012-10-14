@@ -20,6 +20,8 @@
   <dd><%= @paymentterm.percent2 %></dd>
   <dt><strong><%= model_class.human_attribute_name(:day3) %>:</strong></dt>
   <dd><%= @paymentterm.day3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= created(@paymentterm) %>  
 </dl>
 <%= versioning_helper(@currency) %>
 <div class="form-actions">

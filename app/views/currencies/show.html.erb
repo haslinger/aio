@@ -10,6 +10,8 @@
   <dd><%= @currency.currency %></dd>
   <dt><strong><%= model_class.human_attribute_name(:shorttext) %>:</strong></dt>
   <dd><%= @currency.shorttext %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= created(@currency) %>
 </dl>
 <%= versioning_helper(@currency) %>
 <div class="form-actions">

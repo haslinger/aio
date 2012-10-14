@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
 load_and_authorize_resource
 
   def create
+    @customer.created_by = current_user.id
     if @customer.save
       redirect_to @customer, notice: 'Customer was successfully created.'
     else

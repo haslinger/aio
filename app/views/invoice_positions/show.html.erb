@@ -27,7 +27,7 @@
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
   <dd><%= @invoice_position.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
-  <dd><%= @invoice_position.created_by %></dd>
+  <dd><%= created(@invoice_position) %>
 </dl>
 
 <div class="form-actions">
