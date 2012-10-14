@@ -23,6 +23,7 @@ class ProcessInstancesController < ApplicationController
     # Create running process instance
     @first_step = @process_instance.business_process.default_start
     @running = TokenStatus.find_by_name("running")
+
     @instance_token = @process_instance.tokens.new(:company_id => current_company.id, :business_process_id => @token.business_process_id,
                                  :step_id => @first_step.id, :token_status_id => @running.id, :created_by => current_user.id)
 

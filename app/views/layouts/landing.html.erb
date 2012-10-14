@@ -18,27 +18,69 @@
 
   <div class="container">
       <div class="hero-unit">
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <p><%= link_to raw("come in and find out &raquo;"), business_processes_path, :class => "btn btn-primary btn-large" %></p>
+        <%= content_tag("h1", raw("<i class='icon-link ' style='vertical-align:middle'></i> &nbsp;&nbsp;&nbsp;") + @paragraphs.next ) %> <% @paragraphs.next %><br/><br />
+        <%= textile(@paragraphs.next) %> <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
+        <p><%= link_to raw("Come in and find out &raquo;"), business_processes_path, :class => "btn btn-primary btn-large" %></p>
       </div>
 
       <!-- Example row of columns -->
       <div class="row">
         <div class="span4">
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+          <%= content_tag("h2", raw("<i class='icon-heart-empty icon-large' style='vertical-align:middle'></i> &nbsp;&nbsp;&nbsp;" + @paragraphs.next)) %> <% @paragraphs.next %>
+          <%= textile(@paragraphs.next) %>
+          <p><a class="btn" data-target="#firstmodal" data-toggle="modal">Read more &raquo;</a></p>
+
+          <div class="modal hide fade" id="firstmodal" tabindex="-1" role="dialog" aria-labelledby="firstmodallabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="firstmodallabel"><%= @paragraphs.next %></h3>
+            </div>
+            <div class="modal-body">
+              <p><%= @paragraphs.next %></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+          </div>
+          <% @paragraphs.next %>
         </div>
         <div class="span4">
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
-       </div>
+          <%= content_tag("h2", raw("<i class='icon-tag icon-large' style='vertical-align:middle'></i> &nbsp;&nbsp;&nbsp;" + @paragraphs.next)) %> <% @paragraphs.next %>
+          <%= textile(@paragraphs.next) %>
+          <p><a class="btn" data-target="#secondmodal" data-toggle="modal">Read more &raquo;</a></p>
+
+          <div class="modal hide fade" id="secondmodal" tabindex="-1" role="dialog" aria-labelledby="secondmodallabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="secondmodallabel"><%= @paragraphs.next %></h3>
+            </div>
+            <div class="modal-body">
+              <p><%= @paragraphs.next %></p>
+              <p><%= @paragraphs.next %></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+          </div>
+        <% @paragraphs.next %>
+        </div>
         <div class="span4">
-        <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <%= textile(@paragraphs.next) %>
-        <p><a class="btn" href="#">View details &raquo;</a></p>
+          <%= content_tag("h2", raw("<i class='icon-twitter icon-large' style='vertical-align:middle'></i> &nbsp;&nbsp;&nbsp;" + @paragraphs.next)) %> <% @paragraphs.next %>
+          <%= textile(@paragraphs.next) %>
+          <p><a class="btn" data-target="#thirdmodal" data-toggle="modal">Read more &raquo;</a></p>
+
+          <div class="modal hide fade" id="thirdmodal" tabindex="-1" role="dialog" aria-labelledby="thirdmodallabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h3 id="thirdmodallabel"><%= @paragraphs.next %></h3>
+            </div>
+            <div class="modal-body">
+              <p><%= @paragraphs.next %></p>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+          </div>
         </div>
       </div>
 
