@@ -1,7 +1,7 @@
 class Step < ActiveRecord::Base
   has_paper_trail
 
-  attr_accessible :company_id, :created_by, :name, :process_id, :step_action_id, :step_model_id, :business_process_id
+  attr_accessible :company_id, :created_by, :name, :process_id, :step_action_id, :step_model_id, :business_process_id, :default_start
 
   validates_presence_of :name
   validates_presence_of :step_action_id

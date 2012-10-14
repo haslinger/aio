@@ -9,4 +9,9 @@ class BusinessProcess < ActiveRecord::Base
   belongs_to :company
   has_many :steps, :dependent => :restrict
   has_many :process_instances, :dependent => :restrict
+  has_many :tokens, :dependent => :restrict
+
+  def default_start
+    steps.where(:default_start => true).first
+  end
 end

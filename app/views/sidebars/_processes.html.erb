@@ -6,6 +6,7 @@
   <li <%= active("step_actions") %>><%= link_to icon_("play") + t("activerecord.models.step_action.other"), step_actions_path %></li>
   <li <%= active("outgoing_arrows") %>><%= link_to icon_("share") + t("activerecord.models.outgoing_arrow.other"), outgoing_arrows_path %></li>
   <li <%= active("process_instances") %>><%= link_to icon_("truck") + t("activerecord.models.process_instance.other"), process_instances_path %></li>
-  <li <%= active("tokens") %>><%= link_to icon_("tags") + t("activerecord.models.token.other"), tokens_path %></li>
+  <li <%= active("tokens", "show_waiting", true) %>><%= link_to icon_("tags") + t("activerecord.models.token.other"), tokens_path %></li>
+  <li <%= active("tokens", "show_waiting") %>><%= link_to icon_("tags") + t("activerecord.models.token.waiting"), show_waiting_tokens_path %></li>
   <li <%= active("token_statuses") %>><%= link_to icons(["tag","signal"]) + t("activerecord.models.token_status.other"), token_statuses_path %></li>
 </ul>

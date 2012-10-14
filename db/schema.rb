@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014054456) do
+ActiveRecord::Schema.define(:version => 20121014085727) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -200,6 +200,7 @@ ActiveRecord::Schema.define(:version => 20121014054456) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.integer  "business_process_id"
+    t.boolean  "default_start"
   end
 
   create_table "token_statuses", :force => true do |t|
@@ -219,6 +220,7 @@ ActiveRecord::Schema.define(:version => 20121014054456) do
     t.integer  "object_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.integer  "business_process_id"
   end
 
   create_table "units", :force => true do |t|

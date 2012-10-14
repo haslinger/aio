@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :except => [:dummy_in_aio, :dummy_out_aio]
+  skip_authorization_check :only =>  [:dummy_in_aio, :dummy_out_aio]
 
   def read
     @page = Page.find(params[:id])
@@ -28,5 +29,16 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
     redirect_to pages_url
+  end
+
+  def dummy_in_aio
+    @token = Token.find_by_id(params[:id])
+    puts "Dummy IN Step is running via Token #{@token}"
+  end
+
+  def dummy_out_aio
+    @token = Token.find_by_id(params[:token])
+    puts "Dummy OUT Step is running via Token #{@token}"
+    redirect_to update_aio_token_path(@token.id)
   end
 end

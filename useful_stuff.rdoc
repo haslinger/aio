@@ -33,9 +33,11 @@ add index manually:
   rails generate scaffold Token company_id:integer process_instance_id:integer step_id:integer created_by:integer updated_by:integer token_status_id:integer last_step_id:integer object_id:integer
   rails generate scaffold TokenStatus name:string
   rails generate scaffold Pages name:string content:text
-
+  rails generate migration add_business_process_id_to_token business_process_id:integer
+  rails generate migration add_default_start_to_step default_start:boolean
 
 ////////////////////////////
+
 
 
 ///////////////////////////

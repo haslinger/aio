@@ -10,6 +10,7 @@
     <%= f.hidden_field :company_id, :value => current_company.id %>
   <% end %>
 
+  <%= f.association :business_process, :collection => BusinessProcess.where(:company_id => current_company.id) %>
   <%= f.association :process_instance, :collection => ProcessInstance.where(:company_id => current_company.id) %>
 
   <%= f.association :step, :collection => Step.where(:company_id => current_company.id)  %>
