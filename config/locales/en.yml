@@ -274,6 +274,7 @@ en:
       invoice_header:
         one: Invoice Header
         other: Invoice Headers
+        new_aio: New Cash Sale
       invoice_position:
         one: Invoice Position
         other: Invoice Positions
