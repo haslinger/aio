@@ -4,6 +4,8 @@ class Step < ActiveRecord::Base
   attr_accessible :company_id, :created_by, :name, :process_id, :step_action_id, :step_model_id, :business_process_id
 
   validates_presence_of :name
+  validates_presence_of :step_action_id
+  validates_presence_of :step_model_id
   validates_uniqueness_of :name, :scope => [:company_id, :business_process_id]
 
   belongs_to :company
