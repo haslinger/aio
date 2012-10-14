@@ -14,9 +14,11 @@ class Ability
       can :manage, OutgoingArrow, :company_id => current_company.id
       can :manage, ProcessInstance, :company_id => current_company.id
       can :manage, Token, :company_id => current_company.id
+      can :manage, Page
     elsif
      # hebelt für's erste Berechtigungen aus
       can :show, :all
+      can :read, Page
     end
   end
 end

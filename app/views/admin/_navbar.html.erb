@@ -1,0 +1,24 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">AIO@mittenin.at</a>
+      <div class="container-fluid nav-collapse">
+        <ul class="nav">
+          <li><%= link_to t("administration"), "/?menu=admin" %></li>
+          <li><%= link_to t("processes"), "/?menu=processes" %></li>
+          <li><%= link_to t("application"), "/?menu=application" %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <%= render "admin/dropdown" %>
+          <li><%= link_to "EN", "/?locale=en" %></li>
+          <li><%= link_to icon_("signout") + t("logout"), destroy_user_session_path, :method => :delete, :title => t("logout") %></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
