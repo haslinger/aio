@@ -8,4 +8,5 @@ class ProcessInstance < ActiveRecord::Base
   belongs_to :business_process
 
   has_many :tokens, :dependent => :restrict
+  accepts_nested_attributes_for :tokens
 end

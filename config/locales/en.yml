@@ -10,6 +10,7 @@ en:
   deputies: Deputies
   deputy: Deputy
   deputy_id: Deputy
+  error: Fehler
   function: Function
   logout: Logout
   name: Name
@@ -155,6 +156,7 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: ! '%{count} errors prohibited this %{model} from being saved'
   helpers:
+    error_message: Error Message
     links:
       new: "Create %{model}"
       edit: "Edit"
@@ -317,6 +319,7 @@ en:
       token:
         one: Token
         other: Tokens
+        waiting: Waiting Tokens
       token_status:
         one: Token Status
         other: Token Statuses

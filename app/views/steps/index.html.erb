@@ -10,6 +10,7 @@
       <th><%= model_class.human_attribute_name(:process_id) %></th>
       <th><%= model_class.human_attribute_name(:step_model_id) %></th>
       <th><%= model_class.human_attribute_name(:step_action_id) %></th>
+      <th><%= model_class.human_attribute_name(:default_start) %></th>
       <th><%= model_class.human_attribute_name(:created_by) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -22,6 +23,7 @@
         <td><%= step.business_process.name %></td>
         <td><%= step.step_model.name %></td>
         <td><%= step.step_action.name %></td>
+        <td><%= checkbox(step.default_start) %></td>
         <td><%= created(step) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

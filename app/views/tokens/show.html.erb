@@ -7,9 +7,11 @@
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
   <dd><%= @token.company.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:process_instance_id) %>:</strong></dt>
+  <dd><%= @token.business_process.name if @token.business_process %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:process_instance_id) %>:</strong></dt>
   <dd><%= @token.process_instance %></dd>
   <dt><strong><%= model_class.human_attribute_name(:step_id) %>:</strong></dt>
-  <dd><%= @token.step.name %></dd>
+  <dd><%= @token.step.name if @token.step%></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
   <dd><%= created(@token) %></dd>
   <dt><strong><%= model_class.human_attribute_name(:updated_by) %>:</strong></dt>
@@ -17,7 +19,7 @@
   <dt><strong><%= model_class.human_attribute_name(:token_status_id) %>:</strong></dt>
   <dd><%= @token.token_status.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:last_step_id) %>:</strong></dt>
-  <dd><%= @token.last_step.name %></dd>
+  <dd><%= @token.last_step.name if @token.last_step %></dd>
   <dt><strong><%= model_class.human_attribute_name(:object_id) %>:</strong></dt>
   <dd><%= @token.object_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:version) %>:</strong></dt>

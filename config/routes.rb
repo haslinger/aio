@@ -2,14 +2,28 @@ Aio::Application.routes.draw do
   resources :pages do
     member do
      get "read"
+     get "dummy_in_aio"
+     post "dummy_out_aio"
     end
   end
 
   resources :token_statuses
 
-  resources :tokens
+  resources :tokens do
+    collection do
+      get "show_waiting"
+    end
+    member do
+      get "edit_aio"
+      get "update_aio"
+    end
+  end
 
-  resources :process_instances
+  resources :process_instances do
+    collection do
+      post "create_aio"
+    end
+  end
 
   resources :outgoing_arrows
 

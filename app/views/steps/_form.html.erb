@@ -3,6 +3,7 @@
 
 <%= simple_form_for @step, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :name %>
+  <%= f.input :default_start %>
 
   <% if @step.company_id %>
     <%= f.association :company, :disabled => true %>

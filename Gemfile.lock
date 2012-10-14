@@ -5,12 +5,6 @@ GIT
     textile_editor_helper (0.0.30)
 
 GIT
-  remote: git://github.com/nathanvda/cocoon.git
-  revision: 8118a45953d02d84e4bf6aa6a3ed40dfea910bec
-  specs:
-    cocoon (1.1.0)
-
-GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: a8b7a571ae09c97575ddeb54c0504c18ef3659cd
   specs:
@@ -192,7 +186,6 @@ DEPENDENCIES
   ancestry
   cancan
   capistrano
-  cocoon!
   coffee-rails (~> 3.2.1)
   country_select
   debugger
