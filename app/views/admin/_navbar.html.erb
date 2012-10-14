@@ -9,9 +9,9 @@
       <a class="brand" href="/">AIO</a>
       <div class="container-fluid nav-collapse">
         <ul class="nav">
-          <li><%= link_to t("administration"), "/?menu=admin" %></li>
-          <li><%= link_to t("processes"), "/?menu=processes" %></li>
-          <li><%= link_to t("application"), "/?menu=application" %></li>
+          <li><%= link_to t("administration"), "/companies?menu=admin" %></li>
+          <li><%= link_to t("processes"), "/business_processes?menu=processes" %></li>
+          <li><%= link_to t("application"), "/invoice_headers?menu=application" %></li>
         </ul>
         <ul class="nav pull-right">
           <%= render "admin/dropdown" %>
