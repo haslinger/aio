@@ -16,7 +16,6 @@
 //= require twitter/bootstrap
 //= require textile-editor
 //= require textile-editor-config
-//= require cocoon
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery_nested_form
