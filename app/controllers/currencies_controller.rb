@@ -21,6 +21,6 @@ load_and_authorize_resource
   def destroy
     @currency.destroy
 
-    redirect_to customers_url
+    redirect_to currencies_url
   end
 end

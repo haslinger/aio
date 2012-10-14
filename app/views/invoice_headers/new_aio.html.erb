@@ -6,7 +6,7 @@
 
 <%= bootstrap_error(@invoice_header, model_class ) %>
 
-<%= simple_nested_form_for @invoice_header, :html => { :class => 'form-horizontal' }, 
+<%= simple_nested_form_for @invoice_header, 
     :url => url_for(:action => 'create_aio', :controller => 'invoice_headers'), :method => 'post' do |f| %>
 
 <%= render :partial => 'form_aio', :locals => { :f => f } %>

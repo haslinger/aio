@@ -9,7 +9,7 @@
 <%= simple_nested_form_for @invoice_header, :html => { :class => 'form-horizontal' }, 
     :url => url_for(:action => 'create_aio', :controller => 'invoice_headers'), :method => 'post' do |f| %>
 
-<%= render :partial => 'form_aio', :locals => { :f => f1 } %>
+<%= render :partial => 'form_aio', :locals => { :f => f } %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>

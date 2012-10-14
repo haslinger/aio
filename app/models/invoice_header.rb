@@ -9,7 +9,7 @@ class InvoiceHeader < ActiveRecord::Base
 
   validates_presence_of :currency_id, :customer_id
                     
-  has_many :invoice_positions
+  has_many :invoice_positions, :dependent => :destroy
   
   belongs_to :company                  
   belongs_to :currency

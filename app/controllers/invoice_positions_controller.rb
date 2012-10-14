@@ -21,6 +21,6 @@ load_and_authorize_resource
   def destroy
     @invoice_position.destroy
 
-    redirect_to units_url
+    redirect_to invoice_positions_url
   end
 end
