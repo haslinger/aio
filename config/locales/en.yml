@@ -155,6 +155,7 @@ en:
         one: 1 error prohibited this %{model} from being saved
         other: ! '%{count} errors prohibited this %{model} from being saved'
   helpers:
+    error_message: Error Message
     links:
       new: "Create %{model}"
       edit: "Edit"
