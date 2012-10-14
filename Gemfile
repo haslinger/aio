@@ -43,3 +43,5 @@ group :test, :development do
 # gem 'email_spec'                                   # rspec matchers and cucumber steps for testing email
 # gem "shoulda"                                      # expands rspec matcher, e.g. should validate_uniqueness_of
 end
+
+  gem 'debugger' 
