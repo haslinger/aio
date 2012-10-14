@@ -1,0 +1,19 @@
+<%- model_class = InvoiceHeader -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
+                                 :default => "New #{model_class.model_name.human}") %></h1>
+</div>
+
+<%= bootstrap_error(@invoice_header, model_class ) %>
+
+<%= simple_nested_form_for @invoice_header, :html => { :class => 'form-horizontal' }, 
+    :url => url_for(:action => 'create_aio', :controller => 'invoice_headers'), :method => 'post' do |f| %>
+
+<%= render :partial => 'form_aio', :locals => { :f => f1 } %>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invoice_headers_path, :class => 'btn' %>
+  </div>
+<% end %>

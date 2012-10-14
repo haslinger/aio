@@ -23,7 +23,13 @@ Aio::Application.routes.draw do
 
   resources :invoice_positions
 
-  resources :invoice_headers
+  resources :invoice_headers do
+    collection do
+      get 'new_aio'
+      post 'create_aio'
+
+    end
+  end
 
   devise_for :users
 

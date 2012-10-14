@@ -1,6 +1,6 @@
 <ul class="nav nav-list">
   <li class="nav-header">Application</li>
-  <li <%= active("Create Cash Sale") %>><%= link_to icon_("credit-card") + t("activerecord.models.invoice_header.new_aio"), new_aio_invoice_headers_path %></li>
+  <li <%= active("Create Cash Sale") %>><%= link_to icon_("credit-card") + t("activerecord.models.invoice_header.other"), new_aio_invoice_headers_path %></li>
   <li <%= active("invoice_header") %>><%= link_to icon_("credit-card") + t("activerecord.models.invoice_header.other"), invoice_headers_path %></li>
   <li <%= active("invoice_position") %>><%= link_to icons(["credit-card", "list-ol"]) + t("activerecord.models.invoice_position.other"), invoice_positions_path %></li>
 </ul>

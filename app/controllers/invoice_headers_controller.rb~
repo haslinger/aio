@@ -2,7 +2,7 @@ class InvoiceHeadersController < ApplicationController
 load_and_authorize_resource  
 
   def create
-    @invoice_headers.created_by = current_user.id
+    @invoice_header.created_by = current_user.id
     if @invoice_header.save
       redirect_to @invoice_header, notice: 'InvoiceHeader was successfully created.'
     else
@@ -23,4 +23,11 @@ load_and_authorize_resource
 
     redirect_to units_url
   end
+  
+  def new_aio
+
+    @invoice_header = InvoiceHeader.new
+    @invoice_header.invoice_positions.build
+#    render action: "new"
+  end  
 end

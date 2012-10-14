@@ -1,7 +1,4 @@
-<%- model_class = InvoiceHeader -%>
-<%= bootstrap_error(@invoice_header, model_class ) %>
 
-<%= simple_nested_form_for @invoice_header, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @invoice_header.company_id %>
     <%= f.association :company, :disabled => true %>
   <% else %>
@@ -23,13 +20,4 @@
    <%= f.link_to_add "Add a Position", :invoice_positions %>    
 
   
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                invoice_headers_path, :class => 'btn' %>
-  </div>
-<% end %>
 
-<%= simple_form_for @course_group,
-   :url => url_for(:action => 'create', :controller => 'specialities'),
-   :method => 'post' do |f| %>

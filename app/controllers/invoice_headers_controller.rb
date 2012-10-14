@@ -23,4 +23,11 @@ load_and_authorize_resource
 
     redirect_to units_url
   end
+  
+  def new_aio
+
+    @invoice_header = InvoiceHeader.new
+#    @invoice_header.invoice_positions.build
+#    render action: "new"
+  end  
 end

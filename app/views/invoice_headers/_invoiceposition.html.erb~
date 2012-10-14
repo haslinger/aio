@@ -1,0 +1,6 @@
+<p class="invoiceposition">
+  <%= f.input :product %>
+  <%= f.input :quantity %>
+  <%= f.input :unit %>
+  <%= f.hidden_field :_destroy %><%= link_to_function "Delete Position", "remove_fields_options(this)" %></br>
+s</p>

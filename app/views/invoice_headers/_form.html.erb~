@@ -1,7 +1,7 @@
 <%- model_class = InvoiceHeader -%>
 <%= bootstrap_error(@invoice_header, model_class ) %>
 
-<%= simple_form_for @invoice_header, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_nested_form_for @invoice_header, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @invoice_header.company_id %>
     <%= f.association :company, :disabled => true %>
   <% else %>
@@ -11,17 +11,18 @@
   <%= f.association :customer, :label_method => :lastname %>
   <%= f.input :reference_number %>
   <%= f.association :currency, :label_method => :shorttext %>
-  <%= f.input :created_by %>
   <%= f.input :consignee %>
   <%= f.input :dicount %>
-  <%= f.input :discountvalue_header %>
-  <%= f.input :discountvalue_position %>
-  <%= f.input :taxvalue_full %>
-  <%= f.input :taxvalue_half %>
-  <%= f.input :valuevalue_netto_full %>
-  <%= f.input :value_netto_half %>
-  <%= f.input :value_netto %>
-  <%= f.input :value_payed %>
+
+  <%= f.simple_fields_for :invoice_positions do |pos| %>
+    <%= pos.association :product, :label_method => :shorttext %>
+    <%= pos.input :quantity, :label => false %>
+    <%= pos.association :unit, :label_method => :shorttext %>
+    <%= pos.link_to_remove "Delete Position" %>
+   <% end %>   
+   <%= f.link_to_add "Add a Position", :invoice_positions %>    
+
+  
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
