@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014043847) do
+ActiveRecord::Schema.define(:version => 20121014054456) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20121014043847) do
     t.string   "shorttext"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "created_by"
   end
 
   create_table "customers", :force => true do |t|
@@ -143,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20121014043847) do
     t.integer  "day3"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "created_by"
   end
 
   create_table "process_instances", :force => true do |t|
@@ -161,13 +163,13 @@ ActiveRecord::Schema.define(:version => 20121014043847) do
     t.string   "eannumber"
     t.string   "taxcode"
     t.boolean  "deletionflag"
-    t.string   "baseunit"
     t.decimal  "salesprice",    :precision => 10, :scale => 0
     t.decimal  "purchaseprice", :precision => 10, :scale => 0
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
     t.integer  "created_by"
     t.integer  "company_id"
+    t.integer  "unit_id"
   end
 
   create_table "roles", :force => true do |t|
@@ -226,6 +228,7 @@ ActiveRecord::Schema.define(:version => 20121014043847) do
     t.string   "isocode"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "created_by"
   end
 
   create_table "users", :force => true do |t|

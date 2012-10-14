@@ -2,6 +2,7 @@ class InvoiceHeadersController < ApplicationController
 load_and_authorize_resource  
 
   def create
+    @invoice_header.created_by = current_user.id
     if @invoice_header.save
       redirect_to @invoice_header, notice: 'InvoiceHeader was successfully created.'
     else
@@ -10,7 +11,7 @@ load_and_authorize_resource
   end
 
   def update
-    if @invoice_header.update_attributes(params[:unit])
+    if @invoice_header.update_attributes(params[:invoice_header])
       redirect_to @invoice_header, notice: 'InvoiceHeader was successfully updated.'
     else
       render action: "edit"

@@ -8,9 +8,9 @@
     <%= f.association :company, :disabled => true, :selected => current_company.id %>
     <%= f.hidden_field :company_id, :value => current_company.id %>
   <% end %>
-  <%= f.association :customer_id, :label_method => :lastname %>
+  <%= f.association :customer, :label_method => :lastname %>
   <%= f.input :reference_number %>
-  <%= f.association :currency_id, :label_method => :shorttext %>
+  <%= f.association :currency, :label_method => :shorttext %>
   <%= f.input :created_by %>
   <%= f.input :consignee %>
   <%= f.input :dicount %>
@@ -25,6 +25,6 @@
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                invoice_header_path, :class => 'btn' %>
+                invoice_headers_path, :class => 'btn' %>
   </div>
 <% end %>

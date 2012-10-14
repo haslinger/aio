@@ -21,13 +21,13 @@
   <dt><strong><%= model_class.human_attribute_name(:deletionflag) %>:</strong></dt>
   <dd><%= @product.deletionflag %></dd>
   <dt><strong><%= model_class.human_attribute_name(:baseunit) %>:</strong></dt>
-  <dd><%= @product.baseunit %></dd>
+  <dd><%= @product.unit.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:salesprice) %>:</strong></dt>
   <dd><%= @product.salesprice %></dd>
   <dt><strong><%= model_class.human_attribute_name(:purchaseprice) %>:</strong></dt>
   <dd><%= @product.purchaseprice %></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
-  <dd><%= @product.created_by %></dd>
+  <dd><%= created(@product) %>
 </dl>
 <%= versioning_helper(@product) %>
 <div class="form-actions">

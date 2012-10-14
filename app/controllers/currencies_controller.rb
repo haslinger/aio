@@ -2,6 +2,7 @@ class CurrenciesController < ApplicationController
 load_and_authorize_resource
 
   def create
+    @currency.created_by = current_user.id
     if @currency.save
       redirect_to @currency, notice: 'Currency was successfully created.'
     else
@@ -10,7 +11,7 @@ load_and_authorize_resource
   end
 
   def update
-    if @currency.update_attributes(params[:customer])
+    if @currency.update_attributes(params[:currency])
       redirect_to @currency, notice: 'Currency was successfully updated.'
     else
       render action: "edit"

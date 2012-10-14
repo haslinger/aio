@@ -35,7 +35,7 @@
   <dt><strong><%= model_class.human_attribute_name(:value_payed) %>:</strong></dt>
   <dd><%= @invoice_header.value_payed %></dd>
 </dl>
-
+<%= versioning_helper(@invoice_header) %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               invoice_header_path, :class => 'btn'  %>

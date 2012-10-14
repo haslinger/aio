@@ -11,7 +11,6 @@
   <%= f.association :customer, :label_method => :lastname %>
   <%= f.input :reference_number %>
   <%= f.association :currency, :label_method => :shorttext %>
-  <%= f.input :created_by %>
   <%= f.input :consignee %>
   <%= f.input :dicount %>
   <%= f.input :discountvalue_header %>
@@ -25,6 +24,6 @@
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                invoice_header_path, :class => 'btn' %>
+                invoice_headers_path, :class => 'btn' %>
   </div>
 <% end %>

@@ -12,8 +12,6 @@
   <dd><%= @invoice_header.reference_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:currency_id) %>:</strong></dt>
   <dd><%= @invoice_header.currency.shorttext %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
-  <dd><%= @invoice_header.created_by %></dd>
   <dt><strong><%= model_class.human_attribute_name(:consignee) %>:</strong></dt>
   <dd><%= @invoice_header.consignee %></dd>
   <dt><strong><%= model_class.human_attribute_name(:dicount) %>:</strong></dt>
@@ -34,6 +32,8 @@
   <dd><%= @invoice_header.value_netto %></dd>
   <dt><strong><%= model_class.human_attribute_name(:value_payed) %>:</strong></dt>
   <dd><%= @invoice_header.value_payed %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= created(@invoice_header) %>  
 </dl>
 <%= versioning_helper(@invoice_header) %>
 <div class="form-actions">

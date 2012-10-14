@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 load_and_authorize_resource
   def create
+    @product.created_by = current_user.id
     if @product.save
       redirect_to @product, notice: 'Product was successfully created.'
     else

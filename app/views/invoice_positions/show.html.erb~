@@ -9,11 +9,11 @@
   <dt><strong><%= model_class.human_attribute_name(:textposition) %>:</strong></dt>
   <dd><%= @invoice_position.textposition %></dd>
   <dt><strong><%= model_class.human_attribute_name(:product_id) %>:</strong></dt>
-  <dd><%= @invoice_position.product_id %></dd>
+  <dd><%= @invoice_position.product.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quantity) %>:</strong></dt>
   <dd><%= @invoice_position.quantity %></dd>
   <dt><strong><%= model_class.human_attribute_name(:unit_id) %>:</strong></dt>
-  <dd><%= @invoice_position.unit_id %></dd>
+  <dd><%= @invoice_position.unit.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:discount) %>:</strong></dt>
   <dd><%= @invoice_position.discount %></dd>
   <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>

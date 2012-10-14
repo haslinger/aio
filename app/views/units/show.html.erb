@@ -12,6 +12,8 @@
   <dd><%= @unit.shorttext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:isocode) %>:</strong></dt>
   <dd><%= @unit.isocode %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:created_by) %>:</strong></dt>
+  <dd><%= created(@unit) %>  
 </dl>
 <%= versioning_helper(@unit) %>
 <div class="form-actions">
