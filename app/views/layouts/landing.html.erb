@@ -20,7 +20,7 @@
       <div class="hero-unit">
         <%= content_tag("h1", raw("<i class='icon-link ' style='vertical-align:middle'></i> &nbsp;&nbsp;&nbsp;") + @paragraphs.next ) %> <% @paragraphs.next %><br/><br />
         <%= textile(@paragraphs.next) %> <%= textile(@paragraphs.next) %> <% @paragraphs.next %>
-        <p><%= link_to raw("Come in and find out &raquo;"), business_processes_path(:menu => "administration"), :class => "btn btn-primary btn-large" %></p>
+        <p><%= link_to raw("Come in and find out &raquo;"), business_processes_path(:menu => "processes"), :class => "btn btn-primary btn-large" %></p>
       </div>
 
       <!-- Example row of columns -->
